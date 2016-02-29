@@ -163,6 +163,7 @@
 #form-submit{
     background-color: #2d2d30;
     transition: background-color 0.5s,border 0.5s;
+    margin-top: 20px;
 }
 
 #form-submit:hover{
