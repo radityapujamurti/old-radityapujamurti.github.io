@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>MRP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../../script.js"></script>
+
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">MADE RADITYA PUJAMURTI</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+<!--         <li><a href="../../index.html">Home</a></li>
+ -->      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="" class="container blog-container" style="margin: 0 auto 120px auto;">
+  <h1>What I Wish to Know Before Starting a Meteor Project</h1>
+  <p>Alright these things might be really obvious but if you are extremely excited to start your first project and want to jump straight to coding like me, probably you will miss these things too! Or maybe you have seen these things somewhere but they are not obvious enough for beginners like us. So here is the things that I miss when I first started my Meteor project.</p>
+  <ol>
+    <h2><li>You don't have to include JS, CSS, ... files explicitly.</li></h2>
+    If you have experience coding in other framework such as .NET MVC, you might be accustomed to include necessary files such as:
+    <pre><code>
+      ...
+      rel="stylesheet" href="~/style.css"
+      script src="~/script.js"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+      ...
+    </code></pre>
+    However, Meteor is where magic happens! You do not have to explicitly include those files. Meteor automatically includes the files that you put in the project folder, alphabetically. Thus, if you want to make certain files to be loaded before others, you can rename them accordingly. You can find out more in this similar <a href="http://vstark.net/2014/09/25/4-things-with-meteor/" target="_blank">post</a> on how to restructure your files.
+    <h2><li>Blaze = dynamic rendering</li></h2>
+    Beginner like me never encounter such awesome thing like Blaze before. You can render template (something like partial view, if you are familiar with .NET MVC) or even toggle class reactively. Reactive simply means it will update the content without refreshing the page. You can harness this power using something like:
+    <pre><code>
+      {{#if currentUser}}
+        //display something only users can see
+      {{else}}
+        //display something else
+      {{/if}}
+    </code></pre>
+    You can do a lot more exciting things with Blaze, one of them is shown in this <a href="http://stackoverflow.com/questions/26744857/creating-a-simple-filter-in-meteor" target="_blank">post</a>. Some people might prefer React.js or Angular.js to be used with Meteor. This is hotly discussed issue at the moment. Personally I feel both of them have plus and minus, so depends on context. However, I will not delve further into the discussion here.
+    <h2><li>Packages</li></h2>
+    I think most people would agree that the existance of numerous awesome packages for Meteor helped them tremendously in their projects. There are so many packages out there and our job is to find the one we need. I personally love accounts-ui, iron router and meteor toys. You can Google it and find so many hidden gems that can save a big chunk of your project's development time.  
+  </ol>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Thanks for reading!</p> 
+</footer>
+
+
+</body>
+</html>
