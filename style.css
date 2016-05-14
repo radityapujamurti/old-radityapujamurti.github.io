@@ -171,6 +171,13 @@
     display: inline-block;
 }
 
+.coming-soon{
+    background-color: white;
+    width: 600px;
+    font-size: 40px;
+    padding: 5px 10px;
+}
+
 .well{
     border-radius: 0;
 }
