@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Quickly Fix CSS from Your Browser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../../script.js"></script>
+
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">MRP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+<!--         <li><a href="../../index.html">Home</a></li>
+ -->      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="" class="container blog-container" style="margin: 0 auto 120px auto;">
+  <h1>Quickly Fix CSS from Your Browser</h1>
+  <p><em>This article is intended for those who are new to CSS</em></p>
+  <p>Configuring the CSS often can be tricky, especially when we take over project from someone else. Generally, we should know how CSS works in affecting how each element is rendered. There might be more than one CSS rule applied to the same element and you may ask, which rule affects the element? As a rule of thumb, CSS rule that is placed last is the one that affects the element, as the name suggests (cascading).  <br><br>
+  
+  However, there is <code>!important</code> statement that prioritize the element with the <code>!important</code> statement to affect the element event though it is placed way on top of the file. This can be useful in the time where we want to make sure all elements conform to certain rules, such as font-weight and font-size. But please use it sparingly as it will result into a situation where almost all of your CSS rules have <code>!important</code> in it, which defeats the purpose of the statement in the first place. <br><br>
+
+  In determining which CSS rule affects which element, I personally feel the easiest way is to use our browser. These are the steps you can do (I am using Chrome but you can use your favourite browser as well): </p> 
+  <ol>
+    <li>
+      Right click on the element that you want to examine and choose 'Inspect element'. This will open a window that shows you various CSS rules that are related to the element as shown by the image below.
+    </li>
+    <img src="img/1.png" alt="Inspect element" class="blog-img">
+    <li>
+      You can do the modification directly to the CSS rules.The change will be reflected directly in the browser. 
+      <img src="img/2.PNG" alt="Inspect element" class="blog-img">
+      <p>For example, on the image above. You would like to modify the font size of <code>h1</code>. Click on the number <code>36px</code> and you can edit the value accordingly. You can even use the arrow up and down on your keyboard to automatically increment/decrement the value. This is more efficient than having you switching back and forth between your project and browser then refresh to see the changes. </p>
+    </li>
+    <li>
+      Make the necessary changes to the CSS rule. After you are done, simply click and drag to select the rule that you want to copy then Ctrl+C to copy the code to your clipboard.
+    </li>
+    <li>
+      The next step is to find the correct CSS rule that affects this element in the project. This is arguably the hardest part, especially if your project has complex CSS rules that overlap with one another. If you are lucky, the browser will tell you the CSS file that contains the rule (for the sample image above, you can see <code>bootstrap.css</code> which indicate the CSS rule is located there. Otherwise, you have to find it manually.
+    </li>
+    <li>
+      After you find the corresponding rule in your project, you can paste the copied rule from the browser and you are done. 
+    </li>
+    <li>
+      Refresh the page on your browser to ensure that all the changes are implemented properly.
+    </li>
+
+  </ol>
+  <p>
+    One thing to take note here is that you have to remember what changes you make. Often we forget to copy and paste the CSS modification on browser to our project. When we refresh the page, all the changes are gone as the project file is not updated. What you can do is to edit the CSS rule on browser, copy paste the changes to the project then continue editing the CSS rule on browser. By splitting the updating of CSS rule to your project in several times, it is less likely you encounter the mistake of editing the CSS on browser only and forget to apply the changes in the project. 
+  </p>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Thanks for reading!</p> 
+</footer>
+
+
+</body>
+</html>
