@@ -49,10 +49,41 @@
     Malicious users can make use of the server information against us. One example is the framework type and version. Since our aim here is to remove any potential information that is potentially dangerous to us, we need to remove it.
     To check the header response, we can install browser extension by searching 'HTTP Header Response' in the extension gallery. Click this <a href="https://blogs.msdn.microsoft.com/varunm/2013/04/23/remove-unwanted-http-response-headers/ " target="_blank">link</a> to learn how we can configure this. 
     <h2><li>Open Ports</li></h2>
-    We should restrict access to ports that are available as endpoints in the VM to some IP address only. This can be done via firewall rule.  
-Firewall rule: press 'Start' , type 'Firewall' and click 'firewall with advanced security'. At the left hand side, click 'Inbound rule' then search for the rule affecting the ports we want to update from the list. Usually you can check from the name on which port the rule is affecting. Double click the rule then go to 'Scope' tab.  Usually the Remote IP Address is set to 'Any IP Address'. We would want to restrict it not to all, but only to some IPs. Hence, change the bulleted point to 'These IP addresses' then click 'Add'. Enter the static public IP address that you want the port to be accessed to. It is also important to check whether there is existing firewall rule affecting the ports that you want to control. Most likely these default rule cannot be overridden hence if you create a new rule affecting the same port, it may not have any effect.  
-If you cannot find any existing rule affecting the port, you would need to create a new rule. On the right, click 'New Rule...'. A new window will pop up and click bulleted point 'Port' instead of 'Program'. Click 'next', enter the specific port you want to control. Next, action would be to allow connection. Leave the profile to be all selected. Next give a meaningful name to the rule so that other users can understand what it does/affects, finish! To configure the rule, follow the same steps from the previous paragraph. 
-Note: be careful when you restrict access to a remote desktop. Check that you have access to it when changing the scope of the rule. Don't be locked out of the VM.      
+    We should restrict access to ports that are available as endpoints in the VM to some IP address only. This can be done via firewall rule.
+    <ol>
+      <li>
+        From 'Start' , type 'Firewall' and click 'firewall with advanced security'.
+      </li>
+      <li>
+        At the left hand side, click 'Inbound rule' then search for the rule affecting the ports we want to update from the list. Usually you can check from the name on which port the rule is affecting.
+        <img src="img/1.png" alt="firewall" class="blog-img"> 
+      </li>
+      <li>
+        Double click the rule then go to 'Scope' tab. In this case, let's try to configure the Dota 2 firewall rule.  Usually the Remote IP Address is set to 'Any IP Address'. 
+        <img src="img/2.png" alt="firewall" class="blog-img"> 
+        We would want to restrict it not to all, but only to some IPs. Hence, change the bulleted point to 'These IP addresses' then click 'Add'. Enter the static public IP address that you want the port to be accessed to.
+        <img src="img/3.png" alt="firewall" class="blog-img"> 
+      </li>
+      <li>
+        It is also important to check whether there is existing firewall rule affecting the ports that you want to control. Most likely these default rule cannot be overridden hence if you create a new rule affecting the same port, it may not have any effect. You can find the existing rule by looking at the 'Local Port' or 'Remote Port' column.
+        <img src="img/4.png" alt="firewall" class="blog-img"> 
+      </li>
+      <li>
+        If you cannot find any existing rule affecting the port, you would need to create a new rule. On the right, click 'New Rule...'. 
+        <img src="img/5.png" alt="firewall" class="blog-img"> 
+      </li>
+      <li>
+        A new window will pop up and click bulleted point 'Port' instead of 'Program'.
+        <img src="img/6.png" alt="firewall" class="blog-img"> 
+      </li>
+      <li>
+        Click 'next', enter the specific port you want to control. Next, action would be to 'Allow the connection'. Leave the profile to be all selected. Next give a meaningful name to the rule so that other users can understand what it does/affects, finish!
+      </li>
+      <br>
+      <p>To configure the new rule that you created, follow step no. 3. </p>
+    </ol>  
+      
+Note: be careful when you set a firewall rule for access to a remote desktop. Check that you have access to it when changing the scope of the rule. Don't be locked out of the VM.      
   </ol>
   
 </div>
