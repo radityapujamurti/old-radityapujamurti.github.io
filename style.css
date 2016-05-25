@@ -4,6 +4,10 @@
 
   }
 
+  .about-text{
+    font-size: larger;
+  }
+
   a:hover{
     text-decoration: none;
   }
