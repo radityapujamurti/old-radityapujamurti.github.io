@@ -15,6 +15,11 @@
       color: #111;
   }
 
+  #profilePhoto{
+    height: 40px;
+    display: inline;
+  }
+
   .row{
     margin: 0;
   }
@@ -110,6 +115,9 @@
       opacity: 0.9;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+  }
+  .navbar-brand{
+    padding: 5px 15px;
   }
   .navbar li a, .navbar .navbar-brand { 
       color: #d5d5d5 !important;
