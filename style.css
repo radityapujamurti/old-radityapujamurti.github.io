@@ -177,7 +177,12 @@
 .project-container img{
     height: 150px;
     display: block;
+    transition: box-shadow 0.5s ease-in-out;
 }
+.project-container img:hover{
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}    
 
 .project-container p, .project-container h2 {
     display: inline-block;
@@ -224,4 +229,14 @@
     margin: 10px 0;
     clear: both;
     display: block;
+}
+
+#contact-image{
+  height: 220px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contact{
+  padding-top: 0;
 }
