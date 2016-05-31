@@ -242,3 +242,9 @@
 #contact{
   min-height: 500px;
 }
+
+.resume-section-heading{
+    background-color: whitesmoke;
+    padding: 10px;
+    display: block;
+}
