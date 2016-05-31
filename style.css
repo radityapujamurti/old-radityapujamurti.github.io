@@ -5,7 +5,9 @@
   }
 
   .about-text{
-    font-size: larger;
+    padding: 20px;
+    background-color: whitesmoke;
+    font-size: large;
   }
 
   a:hover{
@@ -238,5 +240,5 @@
 }
 
 #contact{
-  padding-top: 0;
+  min-height: 500px;
 }
