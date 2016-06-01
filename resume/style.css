@@ -1,0 +1,38 @@
+#resume-sidemenu{
+	position: fixed;
+	top: 100px;
+	right: 50px;
+	background-color: whitesmoke;
+	padding: 0;
+}
+
+.sidemenu-header{
+	padding-left: 15px;
+}
+
+.sidemenu-content{
+	font-size: larger;
+}
+
+.sidemenu-content a{
+	display: block;
+	line-height: 1.3;
+	color: #777;	
+}
+
+.sidemenu-content ul{
+	padding: 0;
+}
+
+.sidemenu-content li{
+	transition: background-color;
+	list-style: none;
+	vertical-align: middle;
+}
+.sidemenu-content li:hover{
+	background-color: whitesmoke;
+}
+.sidemenu-content li.active{
+	border-left: solid 3px grey;
+	font-weight: bold;
+}
