@@ -4,18 +4,19 @@ p{
 
 .life-container{
     width: 60%;
+    position: relative;
 }
 
 .home-btn{
-    position: fixed;
-    font-size: 30px;
-    left: 0;
-    top: 100px;
-    z-index: 999999999999;
+    position: absolute;
+    font-size: 40px;
+    right: 10px;
+    top: 20px;
     display: block;
-    width: 50px;
-    height: 50px;
     color: grey;
+}
+.home-btn:hover{
+    color: black;
 }
 
 .parallax{
