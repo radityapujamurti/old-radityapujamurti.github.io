@@ -36,3 +36,13 @@
 	border-left: solid 3px grey;
 	font-weight: bold;
 }
+
+@media (max-width: 600px){
+	#resume-sidemenu{
+		display: none;
+	}
+	
+	.resume-main-area{
+		width: 100%;
+	}
+}

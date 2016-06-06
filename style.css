@@ -1,3 +1,7 @@
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+      background-color: transparent;
+  }
+  
   body {
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777;
@@ -23,6 +27,7 @@
 
   #profilePhoto{
     height: 40px;
+    width: 40px;
     display: inline;
   }
 
@@ -32,7 +37,6 @@
 
   .container {
       padding: 80px 0px;
-      width: 1000px
   }
   
   .person {
@@ -54,11 +58,7 @@
   .carousel-caption h3 {
       color: #fff !important;
   }
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
-  }
+ 
   .bg-1 {
       background: #2d2d30;
       color: #bdbdbd;
@@ -264,3 +264,41 @@
     background-size: cover;
     position: relative;
 }
+
+ @media (max-width: 600px) {
+    img,iframe{
+        width: 100%;
+    }
+    
+    #myPage{
+       margin-top: 60px;
+    }
+    
+    .project-container img{
+        height: auto;
+    }
+    .container{
+        padding: 5px;
+    }
+    
+    .contact-details-area{
+        width: 100%;
+    }
+    
+    .feedback-area{
+        display: none;
+    }
+    
+    #contact-image{
+        width: 100%;
+        height: auto;
+        display: inline;
+        margin: 80px auto;
+        margin-bottom: 10px;
+    }
+    
+    .contact-details{
+        width: 70%;
+        display: inline;
+    }
+  }

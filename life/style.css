@@ -93,3 +93,19 @@ p{
     .sidenav a {font-size: 18px;}
 }
 
+@media (max-width:600px){
+    #myPage{
+        margin-top: 0;
+    }
+    
+    .life-container{
+        width: 85%;
+        margin-right: 5px;
+    }
+    
+    .life-container p{
+        font-size: 12px;
+    }
+    
+}
+
