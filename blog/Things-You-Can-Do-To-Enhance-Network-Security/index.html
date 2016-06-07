@@ -38,20 +38,20 @@
   </div>
 </nav>
 
-<div id="" class="container blog-container" style="margin: 0 auto 120px auto;">
-  <h1>Things You Can Do To Enhance Network Security</h1>
+<div id="" class="container blog-container">
+  <h1>Things You Can Do To Enhance Network Security</h1><hr>
   <p>If you are required to enhance or 'harden' the security of your network, there are several things you can configure. We may not realize the importance of setting the security properly until something wrong happens. Like the famouse adage says, prevention is better than a cure. Please note that these things are not exhaustive. There may be more things you need to set but these are the things that I did in my project. </p>  
   <ol>
-    <h2><li>SSL and TLS</li></h2>
+    <li>SSL and TLS</li>
     It is recommended that we configure all SSL/TLS servers to only use TLS 1.1 or TLS 1.2 with SSL GTM and CTR cipher suites. In addition, the server should enforce clients to use SSL ciphers with at least SHA-256 hashing algorithm for communication. Also, disable SSL cipher suites that are using Diffie-Hellman key exchange (DHE) on the server. Instead enforce the use of SSL cipher suites with Elliptic-Curve Diffie Hellman key exchange (ECDHE) on the server. To achieve this, we can use IISCrypto software <a href="https://www.nartac.com/Products/IISCrypto" target="_blank">here</a>.
       <br>
       Note: Please be extra careful when configuring the TLS/SSL protocols. Be aware of what you are disabling so that you cannot locked out of the VM. Research on what each item in the software is affecting before disabling them. It is better to be safe by clarifying with your supervisor before proceeding to disable some TLS/SSL protocols. 
-    <h2><li>Custom Error Page</li></h2>
+    <li>Custom Error Page</li>
     We should create a .html or .aspx static files to handle errors. The main idea here is to hide critical information so that malicious users cannot capture too much information in our error page. You can follow the steps <a href="http://benfoster.io/blog/aspnet-mvc-custom-error-pages" target="_blank">here</a>.
-    <h2><li>Server Header HTTP Response</li></h2>
+    <li>Server Header HTTP Response</li>
     Malicious users can make use of the server information against us. One example is the framework type and version. Since our aim here is to remove any potential information that is potentially dangerous to us, we need to remove it.
     To check the header response, we can install browser extension by searching 'HTTP Header Response' in the extension gallery. Click this <a href="https://blogs.msdn.microsoft.com/varunm/2013/04/23/remove-unwanted-http-response-headers/ " target="_blank">link</a> to learn how we can configure this. 
-    <h2><li>Open Ports</li></h2>
+    <li>Open Ports</li>
     We should restrict access to ports that are available as endpoints in the VM to some IP address only. This can be done via firewall rule.
     <ol>
       <li>

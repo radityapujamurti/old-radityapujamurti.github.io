@@ -39,11 +39,11 @@
   </div>
 </nav>
 
-<div id="" class="container blog-container" style="margin: 0 auto 120px auto;">
-  <h1>What I Wish to Know Before Starting a Meteor Project</h1>
+<div id="" class="container blog-container">
+  <h1>What I Wish to Know Before Starting a Meteor Project</h1><hr>
   <p>Alright these things might be really obvious but if you are extremely excited to start your first project and want to jump straight to coding like me, probably you will miss these things too! Or maybe you have seen these things somewhere but they are not obvious enough for beginners like us. So here is the things that I miss when I first started my Meteor project.</p>
   <ol>
-    <h2><li>You don't have to include JS, CSS, ... files explicitly.</li></h2>
+    <li>You don't have to include JS, CSS, ... files explicitly.</li>
     If you have experience coding in other framework such as .NET MVC, you might be accustomed to include necessary files such as:
     <pre><code>
       ...
@@ -53,7 +53,7 @@
       ...
     </code></pre>
     However, Meteor is where magic happens! You do not have to explicitly include those files. Meteor automatically includes the files that you put in the project folder, alphabetically. Thus, if you want to make certain files to be loaded before others, you can rename them accordingly. You can find out more in this similar <a href="http://vstark.net/2014/09/25/4-things-with-meteor/" target="_blank">post</a> on how to restructure your files.
-    <h2><li>Blaze = dynamic rendering</li></h2>
+    <li>Dynamic rendering with Blaze</li>
     Beginner like me never encounter such awesome thing like Blaze before. You can render template (something like partial view, if you are familiar with .NET MVC) or even toggle class reactively. Reactive simply means it will update the content without refreshing the page. You can harness this power using something like:
     <pre><code>
       {{#if currentUser}}
@@ -63,9 +63,9 @@
       {{/if}}
     </code></pre>
     You can do a lot more exciting things with Blaze, one of them is shown in this <a href="http://stackoverflow.com/questions/26744857/creating-a-simple-filter-in-meteor" target="_blank">post</a>. Some people might prefer React.js or Angular.js to be used with Meteor. This is hotly discussed issue at the moment. Personally I feel both of them have plus and minus, so depends on context. However, I will not delve further into the discussion here.
-    <h2><li>Packages</li></h2>
+    <li>Packages</li>
     I think most people would agree that the existance of numerous awesome packages for Meteor helped them tremendously in their projects. There are so many packages out there and our job is to find the one we need. I personally love accounts-ui, iron router and meteor toys. You can Google it and find so many hidden gems that can save a big chunk of your project's development time.
-    <h2><li>Security</li></h2>
+    <li>Security</li>
     By default Meteor project is not configured with the most secure settings. We have to manually remove several packages such as auto-publish and insecure. You can read tons of useful articles to learn how to make your Meteor project more secure. Fortunately, Meteor has a well documented <a href="https://www.meteor.com/tutorials/blaze/security-with-methods" target="_blank">tutorial</a> and <a href="http://guide.meteor.com/security.html" target="_blank">this guide</a> to achieve exactly this.
   </ol>
 </div>

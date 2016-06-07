@@ -3,7 +3,7 @@
   }
   
   body {
-      font: 400 15px/1.8 Lato, sans-serif;
+      font: 400 18px/1.8 Lato, sans-serif;
       color: #777;
 
   }
@@ -231,11 +231,15 @@
 }
 
 .blog-img{
-    max-width: 800px;
+    max-width: 700px;
     margin: 10px 0;
     clear: both;
     display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-container li{
+  margin-top: 20px;
 }
 
 #contact-image{
@@ -271,7 +275,7 @@
 
 @media (min-width: 1200px){
   .container {
-      width: 70%;
+      width: 60%;
   }
 }
 
