@@ -277,6 +277,10 @@
   .container {
       width: 60%;
   }
+  
+  #contact{
+  width: 80%;
+  }
 }
 
  @media (max-width: 800px) {
