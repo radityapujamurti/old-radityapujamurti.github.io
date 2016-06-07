@@ -172,6 +172,10 @@
 
   }
 
+  .blog-container{
+    width: 60%;
+  }
+
 .project-container{
     margin-top: 50px;
 }
@@ -272,6 +276,10 @@
     
     #myPage{
        margin-top: 60px;
+    }
+
+    .blog-container{
+    width: 90%;
     }
     
     .project-container img{

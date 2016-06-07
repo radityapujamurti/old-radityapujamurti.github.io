@@ -38,7 +38,6 @@
 <div id="" class="container blog-container" style="margin: 0 auto 120px auto;">
   <h1>Azure Cloud Service vs Virtual Machine</h1>
   <p>Initially it might be confusing to deal with Azure's cloud service and virtual machine. When I search for explanation online, most of the answers I found were mostly too technical. Here I would like to share with you the difference between the two after working with them, as simply as possible! Please note that this is how I perceive the two services and it might not be 100% accurate.<br><br>
-  Perhaps the easiest way to understand the difference and relationship is through a picture.  
   </p> 
   <img src="img/1.png" alt="Azure cloud service vs virtual machine" class="blog-img"> 
   <br><br><p>From the image above, you can see: </p>
@@ -47,7 +46,7 @@
       In one cloud service, there can be more than one VM.
     </li>
     <li>
-      These VMs share the same public IP address, which is the IP address of the the cloud service.
+      These VMs share the same public IP address, which is the IP address of the the cloud service.However, when you delete all the VMs in the cloud service, the IP address will be empty for the cloud service. You can <a href="http:\clemmblog.azurewebsites.net\convert-existing-dynamic-vip-reserved-ip-addresses-azure\" target="_blank">assign</a> any reserved IP to the cloud service as long as this IP address is not currently in use.  
     </li>
     <li>
       This also means the two VMs have the same DNS e.g. my-cloud-service.cloudapp.net.
