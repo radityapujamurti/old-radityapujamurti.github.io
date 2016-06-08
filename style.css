@@ -232,7 +232,7 @@
 
 .blog-img{
     max-width: 700px;
-    margin: 10px 0;
+    margin: 25px 0;
     clear: both;
     display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -271,6 +271,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+pre{
+  margin: 20px auto;
 }
 
 .slideanim {visibility:hidden;}

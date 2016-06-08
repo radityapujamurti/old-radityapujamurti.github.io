@@ -44,7 +44,7 @@
   <ol>
     <li>SSL and TLS</li>
     It is recommended that we configure all SSL/TLS servers to only use TLS 1.1 or TLS 1.2 with SSL GTM and CTR cipher suites. In addition, the server should enforce clients to use SSL ciphers with at least SHA-256 hashing algorithm for communication. Also, disable SSL cipher suites that are using Diffie-Hellman key exchange (DHE) on the server. Instead enforce the use of SSL cipher suites with Elliptic-Curve Diffie Hellman key exchange (ECDHE) on the server. To achieve this, we can use IISCrypto software <a href="https://www.nartac.com/Products/IISCrypto" target="_blank">here</a>.
-      <br>
+      <br><br>
       Note: Please be extra careful when configuring the TLS/SSL protocols. Be aware of what you are disabling so that you cannot locked out of the VM. Research on what each item in the software is affecting before disabling them. It is better to be safe by clarifying with your supervisor before proceeding to disable some TLS/SSL protocols. 
     <li>Custom Error Page</li>
     We should create a .html or .aspx static files to handle errors. The main idea here is to hide critical information so that malicious users cannot capture too much information in our error page. You can follow the steps <a href="http://benfoster.io/blog/aspnet-mvc-custom-error-pages" target="_blank">here</a>.
