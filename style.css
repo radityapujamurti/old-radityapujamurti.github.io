@@ -8,6 +8,10 @@
 
   }
 
+  #about-pict{
+     border-radius: 200px; 
+  }
+
   .about-text{
     padding: 20px;
     background-color: whitesmoke;
