@@ -324,6 +324,10 @@ pre{
     img,iframe{
         width: 100%;
     }
+
+    #about-pict{
+      width: 70%;
+    }
     
     #myPage{
        margin-top: 60px;
