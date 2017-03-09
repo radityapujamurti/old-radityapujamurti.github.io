@@ -254,6 +254,10 @@ tr:nth-child(even) {
 }
 .sectionHeader, #companyLogo{
   font-size: 50px;
+  
+}
+.sectionHeader{
+  margin-left: 15px;
 }
 .userLogo{
   font-size:25px;
