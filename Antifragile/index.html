@@ -29,6 +29,34 @@
   <a href="Contact/" data-toggle="tooltip" title="Contact Us"><i class="fa fa-phone fa-2x"></i></a>
 </div>
 
+<!-- Trigger the modal with a button -->
+<span data-toggle="modal" data-target="#myModal" id="triggerError">
+  
+</span>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" onclick="errorPredicted()">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Potential Failure Detected</h4>
+      </div>
+      <div class="modal-body">
+        <p>Inverter Name: INV 03 (SN:123456C) </p>
+        <p>Fault Type: Type B </p>
+        <p>Certainty: 98% </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="container-fluid" id="main">
   <div class="row">
     <div class="col-xs-10">
@@ -66,7 +94,7 @@
       </div>
       <div class="inverterItem">
           <p onclick='refreshChart(this)'>INV 03 (SN:123456C)</p>
-          <span class="right viewInvDetailsSpan">Healthy</span>
+          <span class="right viewInvDetailsSpan" id="predictedErrInv">Healthy</span>
       </div>
       <div class="inverterItem">
           <p onclick='refreshChart(this)'>INV 04 (SN:123456D)</p>

@@ -256,3 +256,16 @@ tr:nth-child(even) {
 .userLogo{
   font-size:25px;
 }
+#triggerError{
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 0
+  background-color: transparent !important;
+  color: transparent;
+  z-index: 2;
+}
+#triggerError:hover{
+  cursor: pointer;
+}

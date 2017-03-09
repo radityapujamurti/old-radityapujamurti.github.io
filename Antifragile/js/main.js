@@ -1,8 +1,13 @@
 $(document).ready(function() {
     var inverterName = $('.inverterItem .active').text();
-    $("#chartTitle").text('Chart for ' + inverterName);
+    $("#chartTitle").text('Power output chart for ' + inverterName);
     $('[data-toggle="tooltip"]').tooltip(); 
 });
+
+function errorPredicted(){
+    $('#predictedErrInv').attr('class', 'right viewInvDetailsSpan warning');
+    $('#predictedErrInv').text('Warning');
+}
 
 function submitReport(){
 	alert("Thank you, your report has been submitted.");
@@ -18,7 +23,7 @@ function refreshChart(element){
 	$( ".inverterItem p.active" ).attr('class', '');
 	$( element ).attr('class', 'active');
 	var inverterName = $('.inverterItem .active').text();
-    $("#chartTitle").text('Chart for' + inverterName);
+    $("#chartTitle").text('Power output chart for ' + inverterName);
 	var chartData = generateChartData();
 	var chart = AmCharts.makeChart("chartdiv", {
     "type": "serial",
