@@ -42,24 +42,38 @@
   </div>
 <hr>
 <div class="container-fluid">
-  <h2>Report Issues</h2>
-  <p>Please select the problem type</p>
-  <select id="problemSelector" class="mySelector">
-  <option value="a">Inaccurate Prediction</option>
-  <option value="b">Incomplete Data</option>
-  <option value="c">Others</option>
-  </select>
-  <p>Please elaborate on the error/problem:</p>
-  <textarea rows="4" cols="50" id="problemArea" placeholder="Fill the details here">
-  </textarea><br>
-  <button class="btn-primary button" onclick="submitReport()">Submit</button>
-  <br>
+  <div class="col-xs-6">
+    <h2>Report Issues</h2>
+    <p>Please select the problem type</p>
+    <select id="problemSelector" class="mySelector">
+    <option value="a">Inaccurate Prediction</option>
+    <option value="b">Incomplete Data</option>
+    <option value="c">Others</option>
+    </select>
+    <p>Please elaborate on the error/problem:</p>
+    <textarea rows="4" cols="50" id="problemArea" placeholder="Fill the details here">
+    </textarea><br>
+    <button class="btn-primary button" onclick="submitReport()">Submit</button>
+    <br>
+  </div>
+  <div class="col-xs-6">
+    <div id="googleMap" style="height:400px;width:100%;"></div>
+  </div>
+  
 </div>
 
 
 </div>
+<!-- Add Google Maps -->
 <script>
-    
+function myMap() {
+var myCenter = new google.maps.LatLng(1.290270, 103.851959);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2AlyQaRBX4LWrdzzm8lYZP44hZgptobY&callback=myMap"></script>
 </body>
 </html>
