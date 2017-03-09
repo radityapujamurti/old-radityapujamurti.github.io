@@ -229,6 +229,7 @@ td, th {
     border: 1px solid grey;
     text-align: left;
     padding: 8px;
+    color: black;
 
 }
 .tableHeader{
@@ -237,7 +238,7 @@ td, th {
   font-size: large;
 }
 tr:nth-child(even) {
-    background-color: #3f51b5;
+    background-color: lightgrey;
     color: white;
 }
 .button{
