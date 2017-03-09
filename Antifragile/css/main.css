@@ -1,0 +1,258 @@
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;      
+      font-size: 20px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%); /* make all photos black and white */ 
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+      border-radius: 0;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 70px; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #3f51b5; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 100px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  .sidenav a{
+    display: block;
+    text-align: center;
+    margin: 50px 0;
+    color: white;
+  }
+  .sidenav a.active{
+    border-right: solid 5px #fff;
+  }
+  .sidenav a:hover{
+    border-right: solid 5px #fff;
+  }
+  #main{
+    margin-left: 70px;
+  }
+  .userLogo{
+    margin-top: 20px;
+  }
+  .inverterItem{
+    border-bottom: solid grey 1px;
+    position: relative;
+  }
+  .inverterItem p:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+  .inverterItem p.active{
+    color: #3f51b5;
+    font-weight: bold;
+  }
+  .inverterItem p{
+    margin: 10px 0; 
+  }
+  #chartdiv {
+  width : 100%;
+  height  : 500px;
+}
+#plantSelector, .mySelector{
+  height: 40px;
+  width: 250px;
+  margin-right: 15px;
+}
+#companyLogo{
+  color: #3f51b5;
+}
+.right{
+  position: absolute;
+  right: 0;
+  top: 0
+}
+.viewInvDetailsSpan{
+  padding: 0 10px;
+  background-color: green;
+  color: white;
+}
+.viewInvDetailsSpan.warning{
+  background-color: orange;
+  color: white;
+}
+#chartTitle{
+  text-align: center;
+      font-weight: bolder;
+    font-size: x-large;
+    color: #3f51b5;
+}
+h2{
+  color: #3f51b5;
+}
+table {
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid grey;
+    text-align: left;
+    padding: 8px;
+
+}
+.tableHeader{
+  color: black;
+  font-weight: bold;
+  font-size: large;
+}
+tr:nth-child(even) {
+    background-color: #3f51b5;
+    color: white;
+}
+.button{
+  border: none;
+  padding: 5px 10px;
+}
+.btn{
+  background-color: #3f51b5;
+    color: white;
+}
+.btn-success{
+  background-color: green;
+}
+.sectionHeader, #companyLogo{
+  font-size: 50px;
+}
+.userLogo{
+  font-size:25px;
+}

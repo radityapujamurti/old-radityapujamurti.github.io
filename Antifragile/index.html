@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Antifragile | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+  <script src="js/chart.js"> </script>
+  <script src="js/main.js"> </script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar">
+
+<div id="mySidenav" class="sidenav">
+  <a href="#" class="active" data-toggle="tooltip" title="Home"><i class="fa fa-home fa-2x"></i></a>
+  <a href="Plant-Info/index.html" data-toggle="tooltip" title="Plant Info"><i class="fa fa-info fa-2x"></i></a>
+  <a href="Settings/index.html" data-toggle="tooltip" title="Settings"><i class="fa fa-gear fa-2x"></i></a>
+  <a href="Contact/index.html" data-toggle="tooltip" title="Contact Us"><i class="fa fa-phone fa-2x"></i></a>
+</div>
+
+<div class="container-fluid" id="main">
+  <div class="row">
+    <div class="col-xs-10">
+      <h1 id="companyLogo">CompanyLogo</h1>
+    </div>
+    <div class="col-xs-2 userLogo">
+      <div class="row">
+        <i class="fa fa-user"></i><span>  User Name</span>
+      </div>
+    </div>
+  </div>
+<hr>
+<p>Plant and component to be displayed:</p>
+<select id="plantSelector" class="mySelector">
+  <option value="a">Plant A</option>
+  <option value="b">Plant B</option>
+  <option value="c">Plant C</option>
+</select>
+<select id="componentSelector" class="mySelector">
+  <option value="a">Inverters</option>
+  <option value="b">Component B</option>
+  <option value="c">Component C</option>
+</select>
+<br>
+    <div class="col-xs-6">
+      <h2>Inverter Details</h2>
+      <hr>
+      <div class="inverterItem">
+          <p class="active" onclick='refreshChart(this)'>INV 01 (SN:123456A)</p>
+          <span class="right viewInvDetailsSpan">Healthy</span>
+      </div>
+      <div class="inverterItem">
+          <p onclick='refreshChart(this)'>INV 02 (SN:123456B)</p>
+          <span class="right viewInvDetailsSpan">Healthy</span>
+      </div>
+      <div class="inverterItem">
+          <p onclick='refreshChart(this)'>INV 03 (SN:123456C)</p>
+          <span class="right viewInvDetailsSpan">Healthy</span>
+      </div>
+      <div class="inverterItem">
+          <p onclick='refreshChart(this)'>INV 04 (SN:123456D)</p>
+          <span class="right viewInvDetailsSpan">Healthy</span>
+      </div>
+      <div class="inverterItem">
+          <p onclick='refreshChart(this)'>INV 05 (SN:123456E)</p>
+          <span class="right viewInvDetailsSpan warning">Warning</span>
+      </div>
+      <div class="inverterItem">
+          <p onclick='refreshChart(this)'>INV 06 (SN:123456F)</p>
+          <span class="right viewInvDetailsSpan">Healthy</span>
+      </div>
+    </div>     
+  <div class="col-xs-6">
+    <p id="chartTitle"></p>
+     <div id="chartdiv"></div>
+  </div> 
+</div>
+
+<script>
+    
+</script>
+</body>
+</html>

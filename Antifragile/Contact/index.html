@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Antifragile | Contact</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+  <script src="../js/chart.js"> </script>
+  <script src="../js/main.js"> </script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar">
+
+<div id="mySidenav" class="sidenav">
+  <a href="../"><i class="fa fa-home fa-2x"></i></a>
+  <a href="../Plant-Info/"><i class="fa fa-info fa-2x"></i></a>
+  <a href="../Settings/"><i class="fa fa-gear fa-2x"></i></a>
+  <a href="../Contact/" class="active"><i class="fa fa-phone fa-2x"></i></a>
+</div>
+
+<div class="container-fluid" id="main">
+  <div class="row">
+    <div class="col-xs-10">
+      <h2 class="sectionHeader"><i class="fa fa-phone"></i>  Contact Us</h2>
+    </div>    
+    <div class="col-xs-2 userLogo">
+      <div class="row">
+        <i class="fa fa-user"></i><span>  User Name</span>
+      </div>
+    </div>
+  </div>
+<hr>
+<div class="container-fluid">
+  <h2>Report Issues</h2>
+  <p>Please select the problem type</p>
+  <select id="problemSelector" class="mySelector">
+  <option value="a">Inaccurate Prediction</option>
+  <option value="b">Incomplete Data</option>
+  <option value="c">Others</option>
+  </select>
+  <p>Please elaborate on the error/problem:</p>
+  <textarea rows="4" cols="50" id="problemArea" placeholder="Fill the details here">
+  </textarea><br>
+  <button class="btn-primary button" onclick="submitReport()">Submit</button>
+  <br>
+</div>
+
+
+</div>
+<script>
+    
+</script>
+</body>
+</html>
