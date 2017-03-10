@@ -284,3 +284,9 @@ tr:nth-child(even) {
 p, .userLogo{
   color: black;
 }
+.tableHeader{
+  background-color:#3f51b5;
+}
+.tableHeader th{
+  color: white;
+}
