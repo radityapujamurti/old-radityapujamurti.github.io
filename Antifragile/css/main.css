@@ -278,3 +278,9 @@ tr:nth-child(even) {
 #triggerError:hover{
   cursor: pointer;
 }
+.largeText{
+  font-size: large;
+}
+p, .userLogo{
+  color: black;
+}
