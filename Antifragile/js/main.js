@@ -15,7 +15,7 @@ function submitReport(){
 }
 
 function submitEmail(){
-	alert("The email address has been updated.");
+	alert("Thank you. The details has been updated.");
 }
 
 
@@ -35,7 +35,8 @@ function refreshChart(element){
     "valueAxes": [{
         "axisAlpha": 0.2,
         "dashLength": 1,
-        "position": "left"
+        "position": "left",
+        "title": "Power Output"
     }],
     "mouseWheelZoomEnabled": true,
     "graphs": [{
