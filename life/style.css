@@ -19,16 +19,17 @@ p{
 .parallax{
     background-image: url("img/cover.JPG");
     height: 700px;
-    opacity: 0.65;
+    /*opacity: 0.65;*/
 }
 
 .parallax-label{
     position: absolute;
     display: inline;
-    margin: 50px;
+    left: 0;
+    top: 150px;
     padding: 20px;
-    background-color: grey;
-    color: white;
+    background-color: white;
+    color: black;
     max-width: 550px;
 }
 
