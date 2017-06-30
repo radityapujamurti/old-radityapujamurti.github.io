@@ -19,6 +19,7 @@ p{
 
 .parallax{
     background-image: url("img/cover.jpg");
+    min-height: 600px;
 }
 
 .parallax-label{
