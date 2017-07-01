@@ -9,7 +9,9 @@
   }
 
   #about-pict{
-     border-radius: 200px; 
+     border-radius: 200px;
+     height: 300px;
+    width: 300px; 
   }
 
   .about-text{
