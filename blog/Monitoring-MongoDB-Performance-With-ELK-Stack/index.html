@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Monitoring MongoDB Performance With ELK Stack</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../../script.js"></script>
+
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="http://radityapujamurti.github.io/"><img src="../../images/mrp.jpg" alt="mrp" id="profilePhoto"> MRP</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://radityapujamurti.github.io/#blog">Blog</a></li>
+        <li><a href="http://radityapujamurti.github.io/#projects">Projects</a></li>
+        <li><a href="http://radityapujamurti.github.io/#contact">Contact</a></li>
+        <li><a href="http://radityapujamurti.github.io/resume/">Resume</a></li>
+        <li><a href="http://radityapujamurti.github.io/life/">Life!</a></li>
+     </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="" class="container blog-container">
+  <h1>Monitoring MongoDB Performance With ELK Stack</h1><hr>
+  <p>
+    <em>Last modified on 01/07/2017 <br>
+This article assumes that you have experience with MongoDB. Otherwise, you can refer to the MongoDB documentation to learn more about MongoDB.</em><br><br>
+
+<a href="https://www.mongodb.com/">MongoDB</a> is excellent at storing data and ELK stack is great for analyzing the data. <a href="https://www.elastic.co/products">ELK</a> stands for Elasticsearch, Logstash and Kibana. Combining the goodness from these two will help us in maintaining a robust and reliable database. However, setting up ELK and MongoDB can be a bit tricky for some and these are some steps that we can do to get things started. <br><br>
+The objective of this article is to use ELK stack to monitor the replication metric status obtained from <code>rs.status()</code> command. The metric status shows indications for replication lag such as optimeDate and lastHeartbeatMessage. To accomplish this objective, I mostly follow the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. The majority of the steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. Below are the commands:
+  </p> <br>
+<h1>Install MongoDB Community Edition on Ubuntu</h1>
+<code>
+  $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv <br>
+  $echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list<br>
+  $sudo apt-get update<br>
+  $sudo apt-get install -y mongodb-org<br>
+  $sudo service mongod start<br>
+  $sudo service mongod stop
+</code><br>
+
+<h1>Convert a Standalone MongoDB Instance to a Replica Set</h1>
+<p>To make a replica set, start the mongodb instance and inclide the <code>replSet</code> configuration <br>
+<code>
+  sudo mongod --dbpath /var/lib/mongodb/ --replSet rs0
+</code> <br>
+Minimize the terminal and open a new terminal. Connect to the primary(default db) by executing: <br>  
+<code>
+  mongo <br>
+  rs.initiate() <br>
+  rs.status()
+</code><br>
+  You should get information about the replica. Exit the mongo shell (ctrl + c). <br>
+  Create another mongodb instance in another folder and port. <br>
+<code>
+  sudo mkdir /var/lib/mongodb2 <br>
+  sudo mongod --dbpath /var/lib/mongodb2/ --port 27018 --replSet rs0
+</code><br>
+Let it run and open a new terminal. Repeat to create the third instance: <br>
+<code>
+  sudo mkdir /var/lib/mongodb3 <br>
+  sudo mongod --path /var/lib/mongodb3/ --port 27019 --replSet rs0
+</code><br>
+Add those two instances to the primary. Open a new terminal and execute: <br>
+<code>
+  mongo <br>
+  rs.add("<hostname>:27018")<br>
+  rs.add("<hostname>:27019")
+</code><br>
+You can check the <code><hostname></code> at ‘name’ under ‘members’ field when you execute rs.status()
+Now the MongoDB is ready, let’s install ELK stack. Firstly, we need to install JDK if not already installed. <br>
+<code>  
+  sudo apt-get update<br>
+  sudo apt-get install default-jdk
+</code> <br>
+
+<h1>Install Elasticsearch</h1>
+<p>
+  <code>
+    $wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.3.tar.gz <br>
+    $sha1sum elasticsearch-5.4.3.tar.gz  <br>
+    $tar -xzf elasticsearch-5.4.3.tar.gz<br>
+    $cd elasticsearch-5.4.3/  <br>
+    $./bin/elasticsearch<br>
+
+  </code>
+  You can open your browser and go to <code>localhost:9200</code> to check Elasticsearch is running.
+</p>
+
+<h1>Install Logstash</h1>
+<p>
+  Download and install the Public Signing Key:<br>
+  <code>
+      wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - <br>
+  </code>
+  You may need to install the apt-transport-https package on Debian before proceeding:<br>
+  <code>
+    sudo apt-get install apt-transport-https <br>
+  </code>
+  Save the repository definition to /etc/apt/sources.list.d/elastic-5.x.list:<br>
+  <code>
+    echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list<br>
+  </code>
+  Run sudo apt-get update and the repository is ready for use. You can install it with:<br>
+  <code>
+    sudo apt-get update && sudo apt-get install logstash <br>
+  </code>
+  To make sure it runs, execute the following command:<br>
+  <code>sudo service logstash status</code>
+</p>
+
+<h1>
+  Redirect System Logs to Logstash
+</h1>
+<p>
+  Create the following file:
+  /etc/logstash/conf.d/10-syslog.conf<br>
+    <pre>
+    input { 
+    exec {
+      command => "mongo --eval ‘rs.status()'” 
+      interval => 10
+      type => "replicationMetric"
+          }
+      }
+
+      filter { 
+         json {
+             source => "message"
+          }
+       }
+
+      output{
+      elasticsearch {
+            hosts => ["localhost:9200"]
+          }
+      } 
+    </pre>
+  Finally, restart Logstash to reread its configuration:
+  <code>
+    sudo service logstash restart <br>
+  </code>
+</p>
+
+<h1>Installing Kibana</h1>
+<p>
+<code>
+  $wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - <br>
+
+  $echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list<br>
+
+  $sudo apt-get update && sudo apt-get install kibana<br>
+
+  $ps -p 1 //to check how to start the service. Here we use systemd<br>
+
+  $sudo systemctl start kibana.service<br>
+</code>
+Now Kibana is running, access localhost:5601 via your browser. You can learn more about how to use Kibana <a href="https://www.elastic.co/guide/en/kibana/current/index.html">here</a>. <br>
+Done!
+</p>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Thanks for reading!</p> 
+</footer>
+
+
+</body>
+</html>
