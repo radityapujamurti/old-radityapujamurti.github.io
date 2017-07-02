@@ -46,7 +46,7 @@
 This article assumes that you have experience with MongoDB. Otherwise, you can refer to the MongoDB documentation to learn more about MongoDB.</em><br><br>
 
 <a href="https://www.mongodb.com/">MongoDB</a> is excellent at storing data and ELK stack is great for analyzing the data. <a href="https://www.elastic.co/products">ELK</a> stands for Elasticsearch, Logstash and Kibana. Combining the goodness from these two will help us in maintaining a robust and reliable database. However, setting up ELK and MongoDB can be a bit tricky for some and these are some steps that we can do to get things started. <br><br>
-The objective of this article is to use ELK stack to monitor the replication metric status obtained from <code>rs.status()</code> command. The metric status shows indications for replication lag such as optimeDate and lastHeartbeatMessage. To accomplish this objective, I mostly follow the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. The majority of the steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. Below are the commands:
+The objective of this article is to use ELK stack to monitor the replication metric status obtained from <code>rs.status()</code> command. The metric status shows indications for replication lag such as optimeDate and lastHeartbeatMessage. To accomplish this objective, I mostly follow the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. The majority of the steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. Please note that we will do everythin in a single machine and it is only for testing. The real production set up usually involves multiple server in different machines. Below are the commands:
   </p> <br>
 <h1>Install MongoDB Community Edition on Ubuntu</h1>
 <code>
@@ -175,7 +175,7 @@ Now the MongoDB is ready, let’s install ELK stack. Firstly, we need to install
   $sudo systemctl start kibana.service<br>
 </code>
 Now Kibana is running, access localhost:5601 via your browser. You can learn more about how to use Kibana <a href="https://www.elastic.co/guide/en/kibana/current/index.html">here</a>. <br>
-Done!
+Done! 
 </p>
 </div>
 <!-- Footer -->
