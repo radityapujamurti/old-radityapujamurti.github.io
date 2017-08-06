@@ -20,7 +20,7 @@
      border-radius: 200px;
      height: 300px;
     width: 300px;
-    border: white 10px solid; 
+    border: white 5px solid; 
   }
 
   .about-text{
@@ -321,22 +321,6 @@ pre{
     }
   }
 
-
-#contact.parallax { 
-    width: 100%;
-    /* The image used */
-    background-image: url("images/contact-parallax.jpg");
-
-    /* Set a specific height */
-    height: 500px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .parallax-label{
     color: white;
     font-size: 50px;
@@ -391,9 +375,6 @@ pre{
       width: 60%;
   }
   
-  #contact{
-  width: 80%;
-  }
 }
 
  @media (max-width: 800px) {
