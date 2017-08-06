@@ -13,8 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
      <script src="script.js"></script>
-
-  
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -39,24 +37,23 @@
     </div>
   </div>
 </nav>
-
+<div id="particles-js">
+  </div>
 <div id="blog">
 <div class="container">
-  <div style="text-align: center">
-    <img src="images/mrp.jpg" alt="mrp" id="about-pict" class="slideanim">
+  <div style="text-align:center" class="slideanim">
+    <img src="images/mrp.jpg" alt="mrp" id="about-pict" >
   
-  <br><br>
-  <div class="slideanim">
-     <h2>Hi there! My name is Made Raditya Pujamurti</h2>
-  <p><b>Aspiring computer engineer.</b></p>
-  <p><em>'Work hard. Share with others. Be humble.'</em></p>
-  <hr>
-  <p>
-    If you are new to web development or programming just like me, this page has more to offer! Here I will share with you some useful tools that may help you in your own projects. The content may not be substantial but hey, everyone has to start somewhere, right? On the top right hand of your screen, you can navigate by clicking one of those menu. Happy reading! 
-  </p>
-  </div>
- 
-  <hr>
+    <br><br>
+    <div class="about-text">
+       <h2 class="">Hi there! My name is Made Raditya Pujamurti</h2>
+    <p><b>Learning the art of converting caffeine to code.</b></p>
+    <p><em>'Work hard. Share with others. Stay humble.'</em></p>
+    <hr>
+    <p>
+      If you are new to web development or programming just like me, this page has more to offer! Here I will share with you some useful tools that may help you in your own projects. The content may not be substantial but hey, everyone has to start somewhere, right? On the top right hand of your screen, you can navigate by clicking one of those menu. Happy reading! 
+    </p>
+    </div>
   </div>
   <br>
   <div class="blog-preview">
@@ -231,6 +228,12 @@
   <p>Thanks for reading!</p> 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
+<script>
+  particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+</script>
 </body>
 </html>

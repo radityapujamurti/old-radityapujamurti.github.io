@@ -8,16 +8,25 @@
 
   }
 
+  #particles-js{
+    background-color: #2d2d30;
+    position: absolute;
+    z-index: -1;
+    height: 770px;
+    width: 100%;
+  }
+
   #about-pict{
      border-radius: 200px;
      height: 300px;
-    width: 300px; 
+    width: 300px;
+    border: white 10px solid; 
   }
 
   .about-text{
     padding: 20px;
-    background-color: whitesmoke;
     font-size: large;
+    color: white;
   }
 
   a:hover{
