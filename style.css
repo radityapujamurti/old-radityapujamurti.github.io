@@ -53,6 +53,7 @@
 
   .container {
       padding: 80px 0px;
+      overflow-wrap: break-word;
   }
   
   .person {
@@ -387,24 +388,37 @@ pre{
       width: 70%;
       height: 70%;
     }
-    
-    #myPage{
-       
+
+    .container{
+        width: 90% !important;
+        padding: 5px;
     }
 
     .blog-container{
-    width: 90%;
+        width: 90%;
+        padding-top: 60px;
     }
     
     .project-container img{
         height: auto;
     }
-    .container{
-        padding: 5px;
-    }
     
     .contact-details-area{
         width: 100%;
+    }
+
+    .contact-details .fa{
+        margin: 20px 0;
+        width: 75px;
+    }
+
+    #contact{
+        min-height: 0;
+        text-align: center;
+    }
+
+    #contact .well{
+        display: none;
     }
     
     .feedback-area{
@@ -422,6 +436,18 @@ pre{
     .contact-details{
         width: 70%;
         display: inline;
+    }
+
+    #life-banner{
+        display: none;
+    }
+
+    .parallax-label{
+        width: 100% !important;
+    }
+
+    .sidemenu-btn{
+        width: 20px;
     }
   }
 

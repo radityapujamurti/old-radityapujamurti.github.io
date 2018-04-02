@@ -109,6 +109,7 @@ p{
     .sidemenu-btn{
         background-color: grey;
         color: white;
+        width: 20px;
     }
     
     #myPage{

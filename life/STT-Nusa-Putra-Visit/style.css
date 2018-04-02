@@ -22,12 +22,14 @@ p{
 }
 
 .parallax-label{
-        position: absolute;
-    bottom: 0;
+    position: absolute;
+    width: 500px;
+    top: 150px;
+    right: 0;
     padding: 20px;
     margin: 0;
-    background-color: grey;
-    color: white;
+    color: black;
+    background-color: white;
 }
 
 .life-img{
