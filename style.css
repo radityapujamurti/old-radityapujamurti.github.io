@@ -12,7 +12,7 @@
     background-color: #2d2d30;
     position: absolute;
     z-index: -1;
-    height: 770px;
+    height: 800px;
     width: 100%;
   }
 
@@ -20,7 +20,8 @@
      border-radius: 200px;
      height: 300px;
     width: 300px;
-    border: white 5px solid; 
+    border: white 5px solid;
+    margin-top: 60px; 
   }
 
   .about-text{
@@ -384,10 +385,11 @@ pre{
 
     #about-pict{
       width: 70%;
+      height: 70%;
     }
     
     #myPage{
-       margin-top: 60px;
+       
     }
 
     .blog-container{
