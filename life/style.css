@@ -46,11 +46,17 @@ p{
     margin-bottom: 10px;
 }
 
+.life-item-gal img{
+    width: 32%;
+    display: inline;
+    margin: 5px;
+}
+
 .life-item-desc{
     display: inline;
 }
 
-.life-item-desc h2{
+.life-item-desc h2, .life-item-gal h2{
     margin-top: 0;
 }
 
@@ -129,6 +135,12 @@ p{
         width: 100%;
         padding: 0;
         display: block;
+    }
+
+    .life-item-gal img{
+        width: 100%;
+        display: inline;
+        margin: 5px;
     }
     
 }
