@@ -54,9 +54,7 @@ This article assumes that you have some experience with MongoDB. Otherwise, you 
 <p>To monitor MongoDB performance, I would personally recommend using <a href="https://www.mongodb.com/cloud/cloud-manager">MongoDB Cloud Manager</a> as the main monitoring tool. It provides complete monitoring and alerting feature, officially supported by MongoDB team. However, it has some limitations in its free version such as limited data retention of 24 hours. The Kibana dashboard that we are going to build can supplement MongoDB Cloud Manager as it is more customizable and we can adjust how long it keeps the metric data.</p>
 
 <h2>Overview</h2>
-<p> <a href="https://www.mongodb.com/">MongoDB</a> is excellent at storing data and <a href="https://www.elastic.co/products">ELK</a> stack is great for compiling data for further processing. ELK  stands for Elasticsearch, Logstash and Kibana. Combining the goodness from these two will help us in maintaining a robust and reliable database. However, setting up ELK and MongoDB can be a bit tricky for some and these are some steps that we can do to get things started.</p> 
-
-The objective of this article is to use ELK stack to monitor metric status obtained by using <a href="https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html">Metricbeat</a>. The metric collected from the servers may contain many useful components such as memory usage, opcounters, etc. that can help us for troubleshooting. To accomplish this objective, I followed the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. Most of steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. <br>
+The objective of this article is to use ELK stack to monitor MongoDB metric status obtained by using <a href="https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html">Metricbeat</a>. The metric collected from the servers may contain many useful components such as memory usage, opcounters, etc. that can help us for troubleshooting. <br>
 
 <img src="https://logz.io/wp-content/uploads/2018/08/image21-1024x328.png" alt="" class="blog-img">
 <p><em>Source:https://logz.io/wp-content/uploads/2018/08/image21-1024x328.png</em></p>
@@ -64,7 +62,7 @@ The objective of this article is to use ELK stack to monitor metric status obtai
 <ul>
   <li>Beats (includes Filebeat, Metricbeat and others) will collect necessary data in a server. You need to install the necessary Beats in every server you want to monitor. </li>
   <li>Logstash is used to parse (using Grok) and aggregate the incoming data from the Beats. Usually you have one server with Logstash installed to cater to many servers sending data via Beats. </li>
-  <li>Logstash will pass the parsed data to Elasticsearch, the data storage. In a more robust setup, you will need to setup more than one instance of Elasticsearch for redundancy and capacity.</li>
+  <li>Logstash will pass the parsed data to Elasticsearch, the data storage. In a more robust setup, you will need to setup more than one instance of Elasticsearch for redundancy and to increase capacity.</li>
   <li>Kibana's role is to retrieve the data in Elasticsearch and display it in various shape such as pie chart or histogram.</li>
 </ul>
 
