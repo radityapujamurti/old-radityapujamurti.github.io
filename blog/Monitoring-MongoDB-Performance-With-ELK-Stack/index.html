@@ -42,32 +42,45 @@
 <div id="" class="container blog-container">
   <h1>Monitoring MongoDB Performance With ELK Stack</h1><hr>
   <p>
-    <em>Last modified on 03/04/2018 <br>
-This article assumes that you have some experience with MongoDB. Otherwise, you can refer to the MongoDB <a href="https://docs.mongodb.com/">documentation</a> to learn more about MongoDB.</em><br><br>
+    <em>Last modified on 08/09/2018 <br>
+This article assumes that you have some experience with MongoDB. Otherwise, you can refer to the MongoDB <a href="https://docs.mongodb.com/">documentation</a> to learn more about MongoDB.</em><br>
 
-<a href="https://www.mongodb.com/">MongoDB</a> is excellent at storing data and <a href="https://www.elastic.co/products">ELK</a> stack is great for compiling data for further processing. ELK  stands for Elasticsearch, Logstash and Kibana. Combining the goodness from these two will help us in maintaining a robust and reliable database. However, setting up ELK and MongoDB can be a bit tricky for some and these are some steps that we can do to get things started. <br><br>
+<h2>What We Are Going to Build</h2>
+<img src="https://www.elastic.co/guide/en/beats/metricbeat/current/images/metricbeat_system_dashboard.png" alt="dashboard" class="blog-img">
+<p><em>Source:https://www.elastic.co/guide/en/beats/metricbeat/current/images/metricbeat_system_dashboard.png</em></p>
+<p>A Kibana dashboard to display MongoDB metrics such replication lag and RAM usage. You can customize this dashboard to satisfy your requirements. Best of all, it is completely free of charge!</p>
 
-The objective of this article is to use ELK stack to monitor metric status obtained by using <a href="https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html">Metricbeat</a>. The metric collected from the servers may contain many useful components such as memory usage, opcounters, etc. that can help us for troubleshooting. To accomplish this objective, I followed the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. Most of steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. <br><br>
+<h2>Why We Are Building This</h2>
+<p>To monitor MongoDB performance, I would personally recommend using <a href="https://www.mongodb.com/cloud/cloud-manager">MongoDB Cloud Manager</a> as the main monitoring tool. It provides complete monitoring and alerting feature, officially supported by MongoDB team. However, it has some limitations in its free version such as limited data retention of 24 hours. The Kibana dashboard that we are going to build can supplement MongoDB Cloud Manager as it is more customizable and we can adjust how long it keeps the metric data.</p>
+
+<h2>Overview</h2>
+<p> <a href="https://www.mongodb.com/">MongoDB</a> is excellent at storing data and <a href="https://www.elastic.co/products">ELK</a> stack is great for compiling data for further processing. ELK  stands for Elasticsearch, Logstash and Kibana. Combining the goodness from these two will help us in maintaining a robust and reliable database. However, setting up ELK and MongoDB can be a bit tricky for some and these are some steps that we can do to get things started.</p> 
+
+The objective of this article is to use ELK stack to monitor metric status obtained by using <a href="https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html">Metricbeat</a>. The metric collected from the servers may contain many useful components such as memory usage, opcounters, etc. that can help us for troubleshooting. To accomplish this objective, I followed the steps listed  <a href="https://logz.io/blog/mongodb-performance-monitoring-elk-stack/">here</a> and <a href="https://logz.io/blog/install-elk-stack-amazon-aws/">here</a>. Most of steps there will help you in getting the basic set up done. However, there are some modifications that I did to suit my needs. <br>
+
+<img src="https://logz.io/wp-content/uploads/2018/08/image21-1024x328.png" alt="" class="blog-img">
+<p><em>Source:https://logz.io/wp-content/uploads/2018/08/image21-1024x328.png</em></p>
+<p>Based on the architecture above, the flow of data is as below:</p>
+<ul>
+  <li>Beats (includes Filebeat, Metricbeat and others) will collect necessary data in a server. You need to install the necessary Beats in every server you want to monitor. </li>
+  <li>Logstash is used to parse (using Grok) and aggregate the incoming data from the Beats. Usually you have one server with Logstash installed to cater to many servers sending data via Beats. </li>
+  <li>Logstash will pass the parsed data to Elasticsearch, the data storage. In a more robust setup, you will need to setup more than one instance of Elasticsearch for redundancy and capacity.</li>
+  <li>Kibana's role is to retrieve the data in Elasticsearch and display it in various shape such as pie chart or histogram.</li>
+</ul>
+
+<h2>Setup</h2>
+<p>The rest of this article is just a brief run through on how to setup the ELK stack. I would recommend you to go to the official documentation for more details.</p>
 
 <strong>Please note</strong> that we will do everything in a single machine (Ubuntu 16.04) and it is only for testing. The real production set up usually involves multiple server in different machines and Metricbeat needs to be installed on each server that we want to monitor.
-</p> <br>
-<h1>Install MongoDB Community Edition on Ubuntu</h1>
-<code>
-  $sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv <br>
-  $echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list<br>
-  $sudo apt-get update<br>
-  $sudo apt-get install -y mongodb-org<br>
-  #modify the config file if necessary, typically located at /etc/mongod.config
-  $sudo service mongod start<br>
-</code>
+</p>
 
-<h1>Install Java</h1>
+<h2>Install Java</h2>
 <code>  
   sudo apt-get update<br>
   sudo apt-get install default-jdk
 </code> <br>
 
-<h1>Install Elasticsearch</h1>
+<h2>Install Elasticsearch</h2>
 <p> Elasticsearch is essentially a data storage with a very powerful search capability. Some even argue it can replace MongoDB completely but that discussion deserves another post so I will not elaborate here :) <br>
   <code>
     curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.3.tar.gz  <br>
@@ -78,7 +91,7 @@ The objective of this article is to use ELK stack to monitor metric status obtai
   You can open your browser and go to <code>localhost:9200</code> to check Elasticsearch is running. You will see some statements that end with <code>"tagline" : "You Know, for Search"</code>
 </p>
 
-<h1>Install Logstash (optional)</h1>
+<h2>Install Logstash (optional)</h2>
 <p>
   Logstash is used for further processing of the data collected by Metricbeat (or other 'beat' such as Packetbeat or Filebeat). It is a powerful tool to do pipelining, all centralized in one place. <br> 
   Download and install the Public Signing Key:<br>
@@ -102,11 +115,11 @@ The objective of this article is to use ELK stack to monitor metric status obtai
   <code>sudo service logstash status</code>
 </p>
 
-<h1>
+<h2>
   Install Metricbeat
-</h1>
+</h2>
 <p>
-  From the documentation, installing via .deb package:
+  From the <a href="https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-installation.html">documentation</a>, installing via .deb package:
   <code>
     curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.2.3-amd64.deb <br>
     sudo dpkg -i metricbeat-6.2.3-amd64.deb <br>
@@ -150,16 +163,16 @@ The objective of this article is to use ELK stack to monitor metric status obtai
   </code>
 </p>
 
-<h1>Install Kibana</h1>
+<h2>Install Kibana</h2>
 <p>
 <code>
   sudo apt-get update && sudo apt-get install kibana
   sudo -i service kibana start
-</code>
+</code> <br>
 Now Kibana is running, access localhost:5601 via your browser. You can learn more about how to use Kibana <a href="https://www.elastic.co/guide/en/kibana/current/index.html">here</a>. <br>
 </p>
 
-<h1>Setup Kibana dashboard</h1>
+<h2>Setup Kibana dashboard</h2>
 <p>The awesome feature of Metricbeat is that it comes with pre-built dashboard that we can use to monitor our servers. To add them, run <code>metricbeat setup --dashboards</code> and that's it! <br><br>
 
 After a while, you will see some data in Kibana interface. The next step is to customize the dashboard to suit your specific needs. Have fun! <br><br>
