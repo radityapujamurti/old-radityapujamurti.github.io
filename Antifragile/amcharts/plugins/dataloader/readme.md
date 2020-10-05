@@ -23,14 +23,14 @@ server.
 
 So, any of the examples loaded locally (file:///) will not work.
 
-The page needs to be loaded via web server (http://) in order to work properly.
+The page needs to be loaded via web server (https://) in order to work properly.
 
 Loading data from another domain than the web page is loaded is possible but is 
 a subject for `Access-Control-Allow-Origin` policies defined by the web server 
 you are loading data from.
 
 For more about loading data across domains use the following thread:
-http://stackoverflow.com/questions/1653308/access-control-allow-origin-multiple-origin-domains
+https://stackoverflow.com/questions/1653308/access-control-allow-origin-multiple-origin-domains
 
 
 ## Usage
@@ -111,7 +111,7 @@ emptyAs | undefined | [CSV only] replace empty columns with whatever is set here
 error | | Callback function to execute if file load fails
 init | | Callback function to execute when Data Loader is initialized, before any loading starts
 format | json | Type of data: json, csv
-headers | | An array of objects with two properties (key and value) to attach to HTTP request
+headers | | An array of objects with two properties (key and value) to attach to https request
 load | | Callback function to execute when file is successfully loaded (might be invoked multiple times)
 noStyles | false | If set to true no styles will be applied to "Data loading" curtain
 numberFields | | [CSV only] An array of fields in data to treat as numbers
@@ -178,9 +178,9 @@ Sure. You just add a `eventDataLoader` object to your data set. All the same
 settings apply.
 
 
-## Adding custom headers to HTTP requests
+## Adding custom headers to https requests
 
-If you want to add additional headers to your data load HTTP requests, use
+If you want to add additional headers to your data load https requests, use
 "headers" array. Each header is an object with two keys: "key" and "value":
 
 ```
@@ -340,13 +340,13 @@ own versions or completely different products out of it.
 
 Please see attached file "license.txt" for the complete license or online here:
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 
 ## Contact us
 
 * Email:contact@amcharts.com
-* Web: http://www.amcharts.com/
+* Web: https://www.amcharts.com/
 * Facebook: https://www.facebook.com/amcharts
 * Twitter: https://twitter.com/amcharts
 
@@ -381,7 +381,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 * Plugin will now ignore empty CSV lines by default (configurable with `skipEmpty` property)
 
 ### 1.0.8
-* Added `headers` config variable which allows adding custom headers to HTTP requests
+* Added `headers` config variable which allows adding custom headers to https requests
 
 ### 1.0.7
 * Fixed an issue with the Pie chart when it is being loaded in inactive tab

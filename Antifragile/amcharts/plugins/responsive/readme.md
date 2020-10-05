@@ -328,13 +328,13 @@ own versions or completely different products out of it.
 
 Please see attached file "license.txt" for the complete license or online here:
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 
 ## Contact us
 
 * Email:contact@amcharts.com
-* Web: http://www.amcharts.com/
+* Web: https://www.amcharts.com/
 * Facebook: https://www.facebook.com/amcharts
 * Twitter: https://twitter.com/amcharts
 

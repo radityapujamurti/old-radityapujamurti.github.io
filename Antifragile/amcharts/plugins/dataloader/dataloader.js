@@ -3,7 +3,7 @@ Plugin Name: amCharts Data Loader
 Description: This plugin adds external data loading capabilities to all amCharts libraries.
 Author: Martynas Majeris, amCharts
 Version: 1.0.16
-Author URI: http://www.amcharts.com/
+Author URI: https://www.amcharts.com/
 
 Copyright 2015 amCharts
 
@@ -11,7 +11,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+  https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -517,12 +517,12 @@ AmCharts.loadFile = function( url, options, handler ) {
 
   // create the request
   var request;
-  if ( window.XMLHttpRequest ) {
+  if ( window.XMLhttpsRequest ) {
     // IE7+, Firefox, Chrome, Opera, Safari
-    request = new XMLHttpRequest();
+    request = new XMLhttpsRequest();
   } else {
     // code for IE6, IE5
-    request = new ActiveXObject( 'Microsoft.XMLHTTP' );
+    request = new ActiveXObject( 'Microsoft.XMLhttps' );
   }
 
   // open the connection
@@ -645,7 +645,7 @@ AmCharts.parseCSV = function( response, options ) {
 /**
  * Parses CSV data into array
  * Taken from here: (thanks!)
- * http://www.bennadel.com/blog/1504-ask-ben-parsing-csv-strings-with-javascript-exec-regular-expression-command.htm
+ * https://www.bennadel.com/blog/1504-ask-ben-parsing-csv-strings-with-javascript-exec-regular-expression-command.htm
  */
 AmCharts.CSVToArray = function( strData, strDelimiter ) {
   // Check to see if the delimiter is defined. If not,

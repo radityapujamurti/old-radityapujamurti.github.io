@@ -200,7 +200,7 @@
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
 	 * The buffer module from node.js, for the browser.
 	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <https://feross.org>
 	 * @license  MIT
 	 */
 
@@ -894,7 +894,7 @@
 	  return decodeCodePointsArray(res)
 	}
 
-	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+	// Based on https://stackoverflow.com/a/22747272/680742, the browser with
 	// the lowest limit is Chrome, with 0x10000 args.
 	// We go 1 magnitude less, for safety
 	var MAX_ARGUMENTS_LENGTH = 0x1000
@@ -2367,8 +2367,8 @@
 	 * @license
 	 * lodash 3.1.0 (Custom Build) <https://lodash.com/>
 	 * Build: `lodash modern -d -o ./index.js`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.7.0 <http://underscorejs.org/LICENSE>
+	 * Copyright 2012-2015 The Dojo Foundation <https://dojofoundation.org/>
+	 * Based on Underscore.js 1.7.0 <https://underscorejs.org/LICENSE>
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
@@ -2479,7 +2479,7 @@
 
 	  /**
 	   * Used to match `RegExp` special characters.
-	   * See this [article on `RegExp` characters](http://www.regular-expressions.info/characters.html#special)
+	   * See this [article on `RegExp` characters](https://www.regular-expressions.info/characters.html#special)
 	   * for more details.
 	   */
 	  var reRegExpChars = /[.*+?^${}()|[\]\/\\]/g,
@@ -9000,7 +9000,7 @@
 	     *
 	     * This method differs from `_.bind` by allowing bound functions to reference
 	     * methods that may be redefined or don't yet exist.
-	     * See [Peter Michaux's article](http://michaux.ca/articles/lazy-function-definition-pattern)
+	     * See [Peter Michaux's article](https://michaux.ca/articles/lazy-function-definition-pattern)
 	     * for more details.
 	     *
 	     * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
@@ -9156,7 +9156,7 @@
 	     * on the trailing edge of the timeout only if the the debounced function is
 	     * invoked more than once during the `wait` timeout.
 	     *
-	     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+	     * See [David Corbacho's article](https://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
 	     * for details over the differences between `_.debounce` and `_.throttle`.
 	     *
 	     * @static
@@ -9691,7 +9691,7 @@
 	     * on the trailing edge of the timeout only if the the throttled function is
 	     * invoked more than once during the `wait` timeout.
 	     *
-	     * See [David Corbacho's article](http://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
+	     * See [David Corbacho's article](https://drupalmotion.com/article/debounce-and-throttle-visual-explanation)
 	     * for details over the differences between `_.throttle` and `_.debounce`.
 	     *
 	     * @static
@@ -9775,7 +9775,7 @@
 	     * The enumerable properties of `arguments` objects and objects created by
 	     * constructors other than `Object` are cloned to plain `Object` objects. An
 	     * empty object is returned for uncloneable values such as functions, DOM nodes,
-	     * Maps, Sets, and WeakMaps. See the [HTML5 specification](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
+	     * Maps, Sets, and WeakMaps. See the [HTML5 specification](https://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
 	     * for more details.
 	     *
 	     * @static
@@ -9834,7 +9834,7 @@
 	     * The enumerable properties of `arguments` objects and objects created by
 	     * constructors other than `Object` are cloned to plain `Object` objects. An
 	     * empty object is returned for uncloneable values such as functions, DOM nodes,
-	     * Maps, Sets, and WeakMaps. See the [HTML5 specification](http://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
+	     * Maps, Sets, and WeakMaps. See the [HTML5 specification](https://www.w3.org/TR/html5/infrastructure.html#internal-structured-cloning-algorithm)
 	     * for more details.
 	     *
 	     * @static
@@ -11524,7 +11524,7 @@
 	     * the [HTML5 Security Cheatsheet](https://html5sec.org/) for more details.
 	     *
 	     * When working with HTML you should always quote attribute values to reduce
-	     * XSS vectors. See [Ryan Grove's article](http://wonko.com/post/html-escaping)
+	     * XSS vectors. See [Ryan Grove's article](https://wonko.com/post/html-escaping)
 	     * for more details.
 	     *
 	     * @static
@@ -11855,7 +11855,7 @@
 	     * object is provided it takes precedence over `_.templateSettings` values.
 	     *
 	     * **Note:** In the development build `_.template` utilizes sourceURLs for easier debugging.
-	     * See the [HTML5 Rocks article on sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
+	     * See the [HTML5 Rocks article on sourcemaps](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
 	     * for more details.
 	     *
 	     * For more information on precompiling templates see
@@ -11944,7 +11944,7 @@
 	     * ');
 	     */
 	    function template(string, options, otherOptions) {
-	      // Based on John Resig's `tmpl` implementation (http://ejohn.org/blog/javascript-micro-templating/)
+	      // Based on John Resig's `tmpl` implementation (https://ejohn.org/blog/javascript-micro-templating/)
 	      // and Laura Doktorova's doT.js (https://github.com/olado/doT).
 	      var settings = lodash.templateSettings;
 
@@ -13161,7 +13161,7 @@
 	  if (true) {
 	    // Expose lodash to the global object when an AMD loader is present to avoid
 	    // errors in cases where lodash is loaded by a script tag and not intended
-	    // as an AMD module. See http://requirejs.org/docs/errors.html#mismatch for
+	    // as an AMD module. See https://requirejs.org/docs/errors.html#mismatch for
 	    // more details.
 	    root._ = _;
 
@@ -15023,9 +15023,9 @@
 			availableWidth -= col._calcWidth;
 		});
 
-		// http://www.freesoft.org/CIE/RFC/1942/18.htm
-		// http://www.w3.org/TR/CSS2/tables.html#width-layout
-		// http://dev.w3.org/csswg/css3-tables-algorithms/Overview.src.htm
+		// https://www.freesoft.org/CIE/RFC/1942/18.htm
+		// https://www.w3.org/TR/CSS2/tables.html#width-layout
+		// https://dev.w3.org/csswg/css3-tables-algorithms/Overview.src.htm
 		var minW = autoMin + starMaxMin * starColumns.length;
 		var maxW = autoMax + starMaxMax * starColumns.length;
 		if (minW >= availableWidth) {
@@ -19720,7 +19720,7 @@
 	  for (; i > 0; i--) {
 	    var c = buffer[buffer.length - i];
 
-	    // See http://en.wikipedia.org/wiki/UTF-8#Description
+	    // See https://en.wikipedia.org/wiki/UTF-8#Description
 
 	    // 110XXXXX
 	    if (i == 1 && c >> 5 == 0x06) {
@@ -26801,7 +26801,7 @@
 	exports.inspect = inspect;
 
 
-	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+	// https://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 	inspect.colors = {
 	  'bold' : [1, 22],
 	  'italic' : [3, 23],
@@ -26892,7 +26892,7 @@
 	  }
 
 	  // IE doesn't make error fields non-enumerable
-	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+	  // https://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
 	  if (isError(value)
 	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
 	    return formatError(value);
@@ -27283,11 +27283,11 @@
 /* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+	// https://wiki.commonjs.org/wiki/Unit_Testing/1.0
 	//
 	// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
 	//
-	// Originally from narwhal.js (http://narwhaljs.org)
+	// Originally from narwhal.js (https://narwhaljs.org)
 	// Copyright (c) 2009 Thomas Robinson <280north.com>
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66294,7 +66294,7 @@
 	 * A saveAs() FileSaver implementation.
 	 * 2014-08-29
 	 *
-	 * By Eli Grey, http://eligrey.com
+	 * By Eli Grey, https://eligrey.com
 	 * License: X11/MIT
 	 *   See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
 	 */
@@ -66302,7 +66302,7 @@
 	/*global self */
 	/*jslint bitwise: true, indent: 4, laxbreak: true, laxcomma: true, smarttabs: true, plusplus: true */
 
-	/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
+	/*! @source https://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
 
 	var saveAs = saveAs
 	  // IE 10+ (native saveAs)
@@ -66322,7 +66322,7 @@
 			, get_URL = function() {
 				return view.URL || view.webkitURL || view;
 			}
-			, save_link = doc.createElementNS("http://www.w3.org/1999/xhtml", "a")
+			, save_link = doc.createElementNS("https://www.w3.org/1999/xhtml", "a")
 			, can_use_save_link = "download" in save_link
 			, click = function(node) {
 				var event = doc.createEvent("MouseEvents");
@@ -66394,7 +66394,7 @@
 						} else {
 							var new_tab = view.open(object_url, "_blank");
 							if (new_tab == undefined && typeof safari !== "undefined") {
-								//Apple do not allow window.open, see http://bit.ly/1kZffRI
+								//Apple do not allow window.open, see https://bit.ly/1kZffRI
 								view.location.href = object_url
 							}
 						}
@@ -66428,7 +66428,7 @@
 				}
 				// Object and web filesystem URLs have a problem saving in Google Chrome when
 				// viewed in a tab, so I force save with application/octet-stream
-				// http://code.google.com/p/chromium/issues/detail?id=91158
+				// https://code.google.com/p/chromium/issues/detail?id=91158
 				// Update: Google errantly closed 91158, I submitted it again:
 				// https://code.google.com/p/chromium/issues/detail?id=389642
 				if (view.chrome && type && type !== force_saveable_type) {

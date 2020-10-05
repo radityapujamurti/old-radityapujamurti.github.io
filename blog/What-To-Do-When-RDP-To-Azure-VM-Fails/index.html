@@ -5,12 +5,12 @@
   <title>What to Do When RDP to Azure Virtual Machine Fails</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../style.css">
-  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="../../script.js"></script>
 
   
@@ -25,15 +25,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://radityapujamurti.github.io/"><img src="../../images/mrp.jpg" alt="mrp" id="profilePhoto"> MRP</a>
+      <a class="navbar-brand" href="https://radityapujamurti.github.io/"><img src="../../images/mrp.jpg" alt="mrp" id="profilePhoto"> MRP</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://radityapujamurti.github.io/#blog">Blog</a></li>
-        <li><a href="http://radityapujamurti.github.io/#projects">Projects</a></li>
-        <li><a href="http://radityapujamurti.github.io/#contact">Contact</a></li>
-        <li><a href="http://radityapujamurti.github.io/resume/">Resume</a></li>
-        <li><a href="http://radityapujamurti.github.io/life/">Life!</a></li>
+        <li><a href="https://radityapujamurti.github.io/#blog">Blog</a></li>
+        <li><a href="https://radityapujamurti.github.io/#projects">Projects</a></li>
+        <li><a href="https://radityapujamurti.github.io/#contact">Contact</a></li>
+        <li><a href="https://radityapujamurti.github.io/resume/">Resume</a></li>
+        <li><a href="https://radityapujamurti.github.io/life/">Life!</a></li>
      </ul>
     </div>
   </div>
@@ -47,7 +47,7 @@
   <ol>
     <li>Create a new temp VM for troubleshooting.</li> 
     <li>Delete, not shut down, the problem VM (the VM that is experiencing problem) and kept the disk. Be extra careful not to delete the disks from the problem VM, ensure you do not tick the delete harddisk option. We have to delete the VM otherwise we will not be able to attach the OS harddisk to other VM. </li>
-    <li>Atttach the disk to the temp VM as data disk. We can follow this <a href="http://blogs.msdn.com/b/mast/archive/2014/11/20/recovering-azure-vm-by-attaching-os-disk-to-another-azure-vm.aspx
+    <li>Atttach the disk to the temp VM as data disk. We can follow this <a href="https://blogs.msdn.com/b/mast/archive/2014/11/20/recovering-azure-vm-by-attaching-os-disk-to-another-azure-vm.aspx
     " target="_blank">link</a> (follow the steps for attaching the harddisk) to finish this step.</li>      
     <li>Open Regedit. Select <code>HKEY_LOCAL_MACHINE</code> in the left pane of Regedit, then click the File, Load Hive, and browse to the \Windows\System32\Config folder on the drive of the problem VM. For example, if the second VM only has its OS disk attached plus the drive from the problem VM, the path will likely be F:\Windows\System32\Config.</li>                   
     <li>Select the file named <code>SYSTEM</code> in the Config folder. This is the HKEY_LOCAL_MACHINE\System hive from the problem VM’s registry. Give it a key name such as ASystemHive (this is only a temporary name used while the hive is loaded), and click OK.</li>

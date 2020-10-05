@@ -1,8 +1,8 @@
 /*
  ** Versão em Português
  ** Traduzido por Élton Reisdorfer
- ** WebSite: http://eltonrst.tk
- ** Facebook : http://facebook.com/elton.reisdorfer
+ ** WebSite: https://eltonrst.tk
+ ** Facebook : https://facebook.com/elton.reisdorfer
  */
 AmCharts.translations["export"]["pt"] = {
     "fallback.save.text": "CTRL + C para copiar os dados para a área de transferência.",

@@ -5,12 +5,12 @@
   <title>What I Wish to Know Before Starting a Meteor Project</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../style.css">
-  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="../../script.js"></script>
 
   
@@ -25,15 +25,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://radityapujamurti.github.io/"><img src="../../images/mrp.jpg" alt="mrp" id="profilePhoto"> MRP</a>
+      <a class="navbar-brand" href="https://radityapujamurti.github.io/"><img src="../../images/mrp.jpg" alt="mrp" id="profilePhoto"> MRP</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://radityapujamurti.github.io/#blog">Blog</a></li>
-        <li><a href="http://radityapujamurti.github.io/#projects">Projects</a></li>
-        <li><a href="http://radityapujamurti.github.io/#contact">Contact</a></li>
-        <li><a href="http://radityapujamurti.github.io/resume/">Resume</a></li>
-        <li><a href="http://radityapujamurti.github.io/life/">Life!</a></li>
+        <li><a href="https://radityapujamurti.github.io/#blog">Blog</a></li>
+        <li><a href="https://radityapujamurti.github.io/#projects">Projects</a></li>
+        <li><a href="https://radityapujamurti.github.io/#contact">Contact</a></li>
+        <li><a href="https://radityapujamurti.github.io/resume/">Resume</a></li>
+        <li><a href="https://radityapujamurti.github.io/life/">Life!</a></li>
       </ul>
     </div>
   </div>
@@ -52,7 +52,7 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
       ...
     </code></pre>
-    However, Meteor is where magic happens! You do not have to explicitly include those files. Meteor automatically includes the files that you put in the project folder, alphabetically. Thus, if you want to make certain files to be loaded before others, you can rename them accordingly. You can find out more in this similar <a href="http://vstark.net/2014/09/25/4-things-with-meteor/" target="_blank">post</a> on how to restructure your files.
+    However, Meteor is where magic happens! You do not have to explicitly include those files. Meteor automatically includes the files that you put in the project folder, alphabetically. Thus, if you want to make certain files to be loaded before others, you can rename them accordingly. You can find out more in this similar <a href="https://vstark.net/2014/09/25/4-things-with-meteor/" target="_blank">post</a> on how to restructure your files.
     <li>Dynamic rendering with Blaze</li>
     Beginner like me never encounter such awesome thing like Blaze before. You can render template (something like partial view, if you are familiar with .NET MVC) or even toggle class reactively. Reactive simply means it will update the content without refreshing the page. You can harness this power using something like:
     <pre><code>
@@ -62,12 +62,12 @@
         //display something else
       {{/if}}
     </code></pre>
-    You can do a lot more exciting things with Blaze, one of them is shown in this <a href="http://stackoverflow.com/questions/26744857/creating-a-simple-filter-in-meteor" target="_blank">post</a>. Some people might prefer React.js or Angular.js to be used with Meteor. This is hotly discussed issue at the moment. Personally I feel both of them have plus and minus, so depends on context. However, I will not delve further into the discussion here.
+    You can do a lot more exciting things with Blaze, one of them is shown in this <a href="https://stackoverflow.com/questions/26744857/creating-a-simple-filter-in-meteor" target="_blank">post</a>. Some people might prefer React.js or Angular.js to be used with Meteor. This is hotly discussed issue at the moment. Personally I feel both of them have plus and minus, so depends on context. However, I will not delve further into the discussion here.
     <li>Packages</li>
     I think most people would agree that the existance of numerous awesome packages for Meteor helped them tremendously in their projects. There are so many packages out there and our job is to find the one we need. I personally love <a href="https://atmospherejs.com/meteor/accounts-ui" target="_blank">accounts-ui</a>, <a href="https://atmospherejs.com/iron/router" target="_blank">Iron Router</a> and <a href="https://atmospherejs.com/meteortoys" target="_blank">Meteor Toys</a>. You can Google it and find so many hidden gems that can save a big chunk of your project's development time. <br>
     In addition, we need to update Meteor packages frequently. I had one experience where the login button disappeared. After searching for the bug, a simple meteor update in command line fixed the problem. 
     <li>Security</li>
-    By default Meteor project is not configured with the most secure settings. We have to manually remove several packages such as auto-publish and insecure. You can read tons of useful articles to learn how to make your Meteor project more secure. Fortunately, Meteor has a well documented <a href="https://www.meteor.com/tutorials/blaze/security-with-methods" target="_blank">tutorial</a> and <a href="http://guide.meteor.com/security.html" target="_blank">this guide</a> to achieve exactly this.
+    By default Meteor project is not configured with the most secure settings. We have to manually remove several packages such as auto-publish and insecure. You can read tons of useful articles to learn how to make your Meteor project more secure. Fortunately, Meteor has a well documented <a href="https://www.meteor.com/tutorials/blaze/security-with-methods" target="_blank">tutorial</a> and <a href="https://guide.meteor.com/security.html" target="_blank">this guide</a> to achieve exactly this.
   </ol>
 </div>
 <!-- Footer -->

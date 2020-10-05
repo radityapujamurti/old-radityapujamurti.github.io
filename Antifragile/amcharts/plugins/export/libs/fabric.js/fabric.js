@@ -185,8 +185,8 @@ fabric.devicePixelRatio = fabric.window.devicePixelRatio ||
 
   /**
    * @namespace fabric.Observable
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-2#events}
-   * @see {@link http://fabricjs.com/events|Events demo}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-2#events}
+   * @see {@link https://fabricjs.com/events|Events demo}
    */
   fabric.Observable = {
     observe: observe,
@@ -734,7 +734,7 @@ fabric.Collection = {
      * Draws a dashed line between two points
      *
      * This method is used to draw dashed line around selection area.
-     * See <a href="http://stackoverflow.com/questions/4576724/dotted-stroke-in-canvas">dotted stroke in canvas</a>
+     * See <a href="https://stackoverflow.com/questions/4576724/dotted-stroke-in-canvas">dotted stroke in canvas</a>
      *
      * @param {CanvasRenderingContext2D} ctx context
      * @param {Number} x  start x coordinate
@@ -997,9 +997,9 @@ fabric.Collection = {
       boundsOfCurveCache = { },
       _join = Array.prototype.join;
 
-  /* Adapted from http://dxr.mozilla.org/mozilla-central/source/content/svg/content/src/nsSVGPathDataParser.cpp
+  /* Adapted from https://dxr.mozilla.org/mozilla-central/source/content/svg/content/src/nsSVGPathDataParser.cpp
    * by Andrea Bogazzi code is under MPL. if you don't have a copy of the license you can take it here
-   * http://mozilla.org/MPL/2.0/
+   * https://mozilla.org/MPL/2.0/
    */
   function arcToSegments(toX, toY, rx, ry, large, sweep, rotateX) {
     var argsString = _join.call(arguments);
@@ -1173,7 +1173,7 @@ fabric.Collection = {
    * @param {Number} x3 end of beizer
    * @param {Number} y3
    */
-  // taken from http://jsbin.com/ivomiq/56/edit  no credits available for that.
+  // taken from https://jsbin.com/ivomiq/56/edit  no credits available for that.
   function getBoundsOfCurve(x0, y0, x1, y1, x2, y2, x3, y3) {
     var argsString = _join.call(arguments);
     if (boundsOfCurveCache[argsString]) {
@@ -2174,7 +2174,7 @@ fabric.Collection = {
     // While loop checks (and then sets element to) .parentNode OR .host
     //  to account for ShadowDOM. We still want to traverse up out of ShadowDOM,
     //  but the .parentNode of a root ShadowDOM node will always be null, instead
-    //  it should be accessed through .host. See http://stackoverflow.com/a/24765528/4383938
+    //  it should be accessed through .host. See https://stackoverflow.com/a/24765528/4383938
     while (element && (element.parentNode || element.host)) {
 
       // Set element to element parent, or 'host' in case of ShadowDOM
@@ -2372,10 +2372,10 @@ fabric.Collection = {
 
   var makeXHR = (function() {
     var factories = [
-      function() { return new ActiveXObject('Microsoft.XMLHTTP'); },
-      function() { return new ActiveXObject('Msxml2.XMLHTTP'); },
-      function() { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); },
-      function() { return new XMLHttpRequest(); }
+      function() { return new ActiveXObject('Microsoft.XMLhttps'); },
+      function() { return new ActiveXObject('Msxml2.XMLhttps'); },
+      function() { return new ActiveXObject('Msxml2.XMLhttps.3.0'); },
+      function() { return new XMLhttpsRequest(); }
     ];
     for (var i = factories.length; i--; ) {
       try {
@@ -2391,13 +2391,13 @@ fabric.Collection = {
   function emptyFn() { }
 
   /**
-   * Cross-browser abstraction for sending XMLHttpRequest
+   * Cross-browser abstraction for sending XMLhttpsRequest
    * @memberOf fabric.util
-   * @param {String} url URL to send XMLHttpRequest to
+   * @param {String} url URL to send XMLhttpsRequest to
    * @param {Object} [options] Options object
    * @param {String} [options.method="GET"]
    * @param {Function} options.onComplete Callback to invoke when request is completed
-   * @return {XMLHttpRequest} request
+   * @return {XMLhttpsRequest} request
    */
   function request(url, options) {
 
@@ -2525,7 +2525,7 @@ if (typeof console !== 'undefined') {
                           };
 
   /**
-   * requestAnimationFrame polyfill based on http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+   * requestAnimationFrame polyfill based on https://paulirish.com/2011/requestanimationframe-for-smart-animating/
    * In order to get a precise start time, `requestAnimFrame` should be called as an entry into the method
    * @memberOf fabric.util
    * @param {Function} callback Callback to invoke
@@ -2869,7 +2869,7 @@ if (typeof console !== 'undefined') {
 
   /**
    * Easing functions
-   * See <a href="http://gizma.com/easing/">Easing Equations by Robert Penner</a>
+   * See <a href="https://gizma.com/easing/">Easing Equations by Robert Penner</a>
    * @namespace fabric.util.ease
    */
   fabric.util.ease = {
@@ -3166,7 +3166,7 @@ if (typeof console !== 'undefined') {
 
         transformList = '^\\s*(?:' + transforms + '?)\\s*$',
 
-        // http://www.w3.org/TR/SVG/coords.html#TransformAttribute
+        // https://www.w3.org/TR/SVG/coords.html#TransformAttribute
         reTransformList = new RegExp(transformList),
         // == end transform regexp
 
@@ -3398,7 +3398,7 @@ if (typeof console !== 'undefined') {
     }
   }
 
-  // http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
+  // https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute
   // matches, e.g.: +14.56e-12, etc.
   var reViewBoxAttrValue = new RegExp(
     '^' +
@@ -3547,7 +3547,7 @@ if (typeof console !== 'undefined') {
       var elements = descendants.filter(function(el) {
         applyViewboxTransform(el);
         return reAllowedSVGTagNames.test(el.tagName) &&
-              !hasAncestorWithNodeName(el, reNotAllowedAncestors); // http://www.w3.org/TR/SVG/struct.html#DefsElement
+              !hasAncestorWithNodeName(el, reNotAllowedAncestors); // https://www.w3.org/TR/SVG/struct.html#DefsElement
       });
 
       if (!elements || (elements && !elements.length)) {
@@ -3755,7 +3755,7 @@ if (typeof console !== 'undefined') {
       }, { });
 
       // add values parsed from style, which take precedence over attributes
-      // (see: http://www.w3.org/TR/SVG/styling.html#UsingPresentationAttributes)
+      // (see: https://www.w3.org/TR/SVG/styling.html#UsingPresentationAttributes)
       ownAttributes = extend(ownAttributes,
         extend(getGlobalStylesForElement(element, svgUid), fabric.parseStyleAttribute(element)));
       if (ownAttributes.font) {
@@ -3890,7 +3890,7 @@ if (typeof console !== 'undefined') {
     },
 
     /**
-     * Takes url corresponding to an SVG document, and parses it into a set of fabric objects. Note that SVG is fetched via XMLHttpRequest, so it needs to conform to SOP (Same Origin Policy)
+     * Takes url corresponding to an SVG document, and parses it into a set of fabric objects. Note that SVG is fetched via XMLhttpsRequest, so it needs to conform to SOP (Same Origin Policy)
      * @memberOf fabric
      * @param {String} url
      * @param {Function} callback
@@ -4605,7 +4605,7 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
    * @class fabric.Color
    * @param {String} color optional in hex or rgb(a) or hsl format or from known color list
    * @return {fabric.Color} thisArg
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-2/#colors}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-2/#colors}
    */
   function Color(color) {
     if (!color) {
@@ -4876,7 +4876,7 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
    * @static
    * @field
    * @memberOf fabric.Color
-   * @see: http://www.w3.org/TR/CSS2/syndata.html#color-units
+   * @see: https://www.w3.org/TR/CSS2/syndata.html#color-units
    */
   fabric.Color.colorNameMap = {
     aqua:    '#00FFFF',
@@ -4983,7 +4983,7 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
    * @memberOf fabric.Color
    * @param {String} color Color value ex: hsl(0-360,0%-100%,0%-100%) or hsla(0-360,0%-100%,0%-100%, 0-1)
    * @return {Array} source
-   * @see http://http://www.w3.org/TR/css3-color/#hsl-color
+   * @see https://https://www.w3.org/TR/css3-color/#hsl-color
    */
   fabric.Color.sourceFromHsl = function(color) {
     var match = color.match(Color.reHSLa);
@@ -5153,7 +5153,7 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
   /**
    * Gradient class
    * @class fabric.Gradient
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-2#gradients}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-2#gradients}
    * @see {@link fabric.Gradient#initialize} for constructor definition
    */
   fabric.Gradient = fabric.util.createClass(/** @lends fabric.Gradient.prototype */ {
@@ -5372,8 +5372,8 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
      * @param {SVGGradientElement} el SVG gradient element
      * @param {fabric.Object} instance
      * @return {fabric.Gradient} Gradient instance
-     * @see http://www.w3.org/TR/SVG/pservers.html#LinearGradientElement
-     * @see http://www.w3.org/TR/SVG/pservers.html#RadialGradientElement
+     * @see https://www.w3.org/TR/SVG/pservers.html#LinearGradientElement
+     * @see https://www.w3.org/TR/SVG/pservers.html#RadialGradientElement
      */
     fromElement: function(el, instance) {
 
@@ -5504,8 +5504,8 @@ fabric.ElementsParser.prototype.checkIfDone = function() {
 /**
  * Pattern class
  * @class fabric.Pattern
- * @see {@link http://fabricjs.com/patterns|Pattern demo}
- * @see {@link http://fabricjs.com/dynamic-patterns|DynamicPattern demo}
+ * @see {@link https://fabricjs.com/patterns|Pattern demo}
+ * @see {@link https://fabricjs.com/dynamic-patterns|DynamicPattern demo}
  * @see {@link fabric.Pattern#initialize} for constructor definition
  */
 fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ {
@@ -5685,7 +5685,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
   /**
    * Shadow class
    * @class fabric.Shadow
-   * @see {@link http://fabricjs.com/shadows|Shadow demo}
+   * @see {@link https://fabricjs.com/shadows|Shadow demo}
    * @see {@link fabric.Shadow#initialize} for constructor definition
    */
   fabric.Shadow = fabric.util.createClass(/** @lends fabric.Shadow.prototype */ {
@@ -5769,7 +5769,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
 
     /**
      * Returns a string representation of an instance
-     * @see http://www.w3.org/TR/css-text-decor-3/#text-shadow
+     * @see https://www.w3.org/TR/css-text-decor-3/#text-shadow
      * @return {String} Returns CSS3 text-shadow declaration
      */
     toString: function() {
@@ -5790,7 +5790,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
           BLUR_BOX = 20;
 
       if (object.width && object.height) {
-        //http://www.w3.org/TR/SVG/filters.html#FilterEffectsRegion
+        //https://www.w3.org/TR/SVG/filters.html#FilterEffectsRegion
         // we add some extra space to filter box to contain the blur ( 20 )
         fBoxX = toFixed((Math.abs(offset.x) + this.blur) / object.width, NUM_FRACTION_DIGITS) * 100 + BLUR_BOX;
         fBoxY = toFixed((Math.abs(offset.y) + this.blur) / object.height, NUM_FRACTION_DIGITS) * 100 + BLUR_BOX;
@@ -5877,7 +5877,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
    * @class fabric.StaticCanvas
    * @mixes fabric.Collection
    * @mixes fabric.Observable
-   * @see {@link http://fabricjs.com/static_canvas|StaticCanvas demo}
+   * @see {@link https://fabricjs.com/static_canvas|StaticCanvas demo}
    * @see {@link fabric.StaticCanvas#initialize} for constructor definition
    * @fires before:render
    * @fires after:render
@@ -6087,15 +6087,15 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      * @param {Object} [options] Optional options to set for the {@link fabric.Image|overlay image}.
      * @return {fabric.Canvas} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/MnzHT/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/MnzHT/|jsFiddle demo}
      * @example <caption>Normal overlayImage with left/top = 0</caption>
-     * canvas.setOverlayImage('http://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
+     * canvas.setOverlayImage('https://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
      *   // Needed to position overlayImage at 0/0
      *   originX: 'left',
      *   originY: 'top'
      * });
      * @example <caption>overlayImage with different properties</caption>
-     * canvas.setOverlayImage('http://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
+     * canvas.setOverlayImage('https://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
      *   opacity: 0.5,
      *   angle: 45,
      *   left: 400,
@@ -6104,12 +6104,12 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      *   originY: 'top'
      * });
      * @example <caption>Stretched overlayImage #1 - width/height correspond to canvas width/height</caption>
-     * fabric.Image.fromURL('http://fabricjs.com/assets/jail_cell_bars.png', function(img) {
+     * fabric.Image.fromURL('https://fabricjs.com/assets/jail_cell_bars.png', function(img) {
      *    img.set({width: canvas.width, height: canvas.height, originX: 'left', originY: 'top'});
      *    canvas.setOverlayImage(img, canvas.renderAll.bind(canvas));
      * });
      * @example <caption>Stretched overlayImage #2 - width/height correspond to canvas width/height</caption>
-     * canvas.setOverlayImage('http://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
+     * canvas.setOverlayImage('https://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
      *   width: canvas.width,
      *   height: canvas.height,
      *   // Needed to position overlayImage at 0/0
@@ -6117,7 +6117,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      *   originY: 'top'
      * });
      * @example <caption>overlayImage loaded from cross-origin</caption>
-     * canvas.setOverlayImage('http://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
+     * canvas.setOverlayImage('https://fabricjs.com/assets/jail_cell_bars.png', canvas.renderAll.bind(canvas), {
      *   opacity: 0.5,
      *   angle: 45,
      *   left: 400,
@@ -6138,15 +6138,15 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      * @param {Object} [options] Optional options to set for the {@link fabric.Image|background image}.
      * @return {fabric.Canvas} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/YH9yD/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/YH9yD/|jsFiddle demo}
      * @example <caption>Normal backgroundImage with left/top = 0</caption>
-     * canvas.setBackgroundImage('http://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
+     * canvas.setBackgroundImage('https://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
      *   // Needed to position backgroundImage at 0/0
      *   originX: 'left',
      *   originY: 'top'
      * });
      * @example <caption>backgroundImage with different properties</caption>
-     * canvas.setBackgroundImage('http://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
+     * canvas.setBackgroundImage('https://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
      *   opacity: 0.5,
      *   angle: 45,
      *   left: 400,
@@ -6155,12 +6155,12 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      *   originY: 'top'
      * });
      * @example <caption>Stretched backgroundImage #1 - width/height correspond to canvas width/height</caption>
-     * fabric.Image.fromURL('http://fabricjs.com/assets/honey_im_subtle.png', function(img) {
+     * fabric.Image.fromURL('https://fabricjs.com/assets/honey_im_subtle.png', function(img) {
      *    img.set({width: canvas.width, height: canvas.height, originX: 'left', originY: 'top'});
      *    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
      * });
      * @example <caption>Stretched backgroundImage #2 - width/height correspond to canvas width/height</caption>
-     * canvas.setBackgroundImage('http://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
+     * canvas.setBackgroundImage('https://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
      *   width: canvas.width,
      *   height: canvas.height,
      *   // Needed to position backgroundImage at 0/0
@@ -6168,7 +6168,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      *   originY: 'top'
      * });
      * @example <caption>backgroundImage loaded from cross-origin</caption>
-     * canvas.setBackgroundImage('http://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
+     * canvas.setBackgroundImage('https://fabricjs.com/assets/honey_im_subtle.png', canvas.renderAll.bind(canvas), {
      *   opacity: 0.5,
      *   angle: 45,
      *   left: 400,
@@ -6188,16 +6188,16 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      * @param {Function} callback Callback to invoke when background color is set
      * @return {fabric.Canvas} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/pB55h/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/pB55h/|jsFiddle demo}
      * @example <caption>Normal overlayColor - color value</caption>
      * canvas.setOverlayColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
      * @example <caption>fabric.Pattern used as overlayColor</caption>
      * canvas.setOverlayColor({
-     *   source: 'http://fabricjs.com/assets/escheresque_ste.png'
+     *   source: 'https://fabricjs.com/assets/escheresque_ste.png'
      * }, canvas.renderAll.bind(canvas));
      * @example <caption>fabric.Pattern used as overlayColor with repeat and offset</caption>
      * canvas.setOverlayColor({
-     *   source: 'http://fabricjs.com/assets/escheresque_ste.png',
+     *   source: 'https://fabricjs.com/assets/escheresque_ste.png',
      *   repeat: 'repeat',
      *   offsetX: 200,
      *   offsetY: 100
@@ -6213,16 +6213,16 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      * @param {Function} callback Callback to invoke when background color is set
      * @return {fabric.Canvas} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/hXzvk/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/hXzvk/|jsFiddle demo}
      * @example <caption>Normal backgroundColor - color value</caption>
      * canvas.setBackgroundColor('rgba(255, 73, 64, 0.6)', canvas.renderAll.bind(canvas));
      * @example <caption>fabric.Pattern used as backgroundColor</caption>
      * canvas.setBackgroundColor({
-     *   source: 'http://fabricjs.com/assets/escheresque_ste.png'
+     *   source: 'https://fabricjs.com/assets/escheresque_ste.png'
      * }, canvas.renderAll.bind(canvas));
      * @example <caption>fabric.Pattern used as backgroundColor with repeat and offset</caption>
      * canvas.setBackgroundColor({
-     *   source: 'http://fabricjs.com/assets/escheresque_ste.png',
+     *   source: 'https://fabricjs.com/assets/escheresque_ste.png',
      *   repeat: 'repeat',
      *   offsetX: 200,
      *   offsetY: 100
@@ -6234,7 +6234,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
 
     /**
      * @private
-     * @see {@link http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-imagesmoothingenabled|WhatWG Canvas Standard}
+     * @see {@link https://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-imagesmoothingenabled|WhatWG Canvas Standard}
      */
     _setImageSmoothing: function() {
       var ctx = this.getContext();
@@ -7045,8 +7045,8 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
      * @param {String} [options.height] desired height of svg with or without units
      * @param {Function} [reviver] Method for further parsing of svg elements, called after each fabric object converted into svg representation.
      * @return {String} SVG string
-     * @tutorial {@link http://fabricjs.com/fabric-intro-part-3#serialization}
-     * @see {@link http://jsfiddle.net/fabricjs/jQ3ZZ/|jsFiddle demo}
+     * @tutorial {@link https://fabricjs.com/fabric-intro-part-3#serialization}
+     * @see {@link https://jsfiddle.net/fabricjs/jQ3ZZ/|jsFiddle demo}
      * @example <caption>Normal SVG output</caption>
      * var svg = canvas.toSVG();
      * @example <caption>SVG output without preamble (without &lt;?xml ../>)</caption>
@@ -7098,7 +7098,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
       markup.push(
         '<?xml version="1.0" encoding="', (options.encoding || 'UTF-8'), '" standalone="no" ?>\n',
           '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" ',
-            '"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n'
+            '"https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n'
       );
     },
 
@@ -7131,8 +7131,8 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
 
       markup.push(
         '<svg ',
-          'xmlns="http://www.w3.org/2000/svg" ',
-          'xmlns:xlink="http://www.w3.org/1999/xlink" ',
+          'xmlns="https://www.w3.org/2000/svg" ',
+          'xmlns:xlink="https://www.w3.org/1999/xlink" ',
           'version="1.1" ',
           'width="', width, '" ',
           'height="', height, '" ',
@@ -7492,8 +7492,8 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
    * @function
    * @param {Array} [propertiesToInclude] Any properties that you might want to additionally include in the output
    * @return {String} JSON string
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-3#serialization}
-   * @see {@link http://jsfiddle.net/fabricjs/pec86/|jsFiddle demo}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-3#serialization}
+   * @see {@link https://jsfiddle.net/fabricjs/pec86/|jsFiddle demo}
    * @example <caption>JSON without additional properties</caption>
    * var json = canvas.toJSON();
    * @example <caption>JSON with additional properties included</caption>
@@ -7510,7 +7510,7 @@ fabric.Pattern = fabric.util.createClass(/** @lends fabric.Pattern.prototype */ 
 /**
  * BaseBrush class
  * @class fabric.BaseBrush
- * @see {@link http://fabricjs.com/freedrawing|Freedrawing demo}
+ * @see {@link https://fabricjs.com/freedrawing|Freedrawing demo}
  */
 fabric.BaseBrush = fabric.util.createClass(/** @lends fabric.BaseBrush.prototype */ {
 
@@ -8235,7 +8235,7 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
    * Canvas class
    * @class fabric.Canvas
    * @extends fabric.StaticCanvas
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-1#canvas}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-1#canvas}
    * @see {@link fabric.Canvas#initialize} for constructor definition
    *
    * @fires object:modified
@@ -8442,7 +8442,7 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
      * When true, mouse events on canvas (mousedown/mousemove/mouseup) result in free drawing.
      * After mousedown, mousemove creates a shape,
      * and then mouseup finalizes it and adds an instance of `fabric.Path` onto canvas.
-     * @tutorial {@link http://fabricjs.com/fabric-intro-part-4#free_drawing}
+     * @tutorial {@link https://fabricjs.com/fabric-intro-part-4#free_drawing}
      * @type Boolean
      * @default
      */
@@ -8524,8 +8524,8 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
       var pointer = this.getPointer(e, true),
           xy = this._normalizePointer(target, pointer);
 
-      // http://www.geog.ubc.ca/courses/klink/gis.notes/ncgia/u32.html
-      // http://idav.ucdavis.edu/~okreylos/TAship/Spring2000/PointInPolygon.html
+      // https://www.geog.ubc.ca/courses/klink/gis.notes/ncgia/u32.html
+      // https://idav.ucdavis.edu/~okreylos/TAship/Spring2000/PointInPolygon.html
       return (target.containsPoint(xy) || target._findTargetCorner(pointer));
     },
 
@@ -9081,7 +9081,7 @@ fabric.PatternBrush = fabric.util.createClass(fabric.PencilBrush, /** @lends fab
     /**
      * Set the cursor type of the canvas element
      * @param {String} value Cursor type of the canvas element.
-     * @see http://www.w3.org/TR/css3-ui/#cursor
+     * @see https://www.w3.org/TR/css3-ui/#cursor
      */
     setCursor: function (value) {
       this.upperCanvasEl.style.cursor = value;
@@ -10579,7 +10579,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
    * @param {Number} [options.width] Cropping width. Introduced in v1.2.14
    * @param {Number} [options.height] Cropping height. Introduced in v1.2.14
    * @return {String} Returns a data: URL containing a representation of the object in the format specified by options.format
-   * @see {@link http://jsfiddle.net/fabricjs/NfZVb/|jsFiddle demo}
+   * @see {@link https://jsfiddle.net/fabricjs/NfZVb/|jsFiddle demo}
    * @example <caption>Generate jpeg dataURL with lower quality</caption>
    * var dataURL = canvas.toDataURL({
    *   format: 'jpeg',
@@ -10798,7 +10798,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
    * @param {Function} [reviver] Method for further parsing of JSON elements, called after each fabric object created.
    * @return {fabric.Canvas} instance
    * @chainable
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-3#deserialization}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-3#deserialization}
    */
   loadFromDatalessJSON: function (json, callback, reviver) {
     return this.loadFromJSON(json, callback, reviver);
@@ -10814,8 +10814,8 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
    * @param {Function} [reviver] Method for further parsing of JSON elements, called after each fabric object created.
    * @return {fabric.Canvas} instance
    * @chainable
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-3#deserialization}
-   * @see {@link http://jsfiddle.net/fabricjs/fmgXt/|jsFiddle demo}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-3#deserialization}
+   * @see {@link https://jsfiddle.net/fabricjs/fmgXt/|jsFiddle demo}
    * @example <caption>loadFromJSON</caption>
    * canvas.loadFromJSON(json, canvas.renderAll.bind(canvas));
    * @example <caption>loadFromJSON with reviver</caption>
@@ -11032,7 +11032,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
   /**
    * Root object class from which all 2d shape classes inherit from
    * @class fabric.Object
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-1#objects}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-1#objects}
    * @see {@link fabric.Object#initialize} for constructor definition
    *
    * @fires added
@@ -11317,7 +11317,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
 
     /**
      * Horizontal origin of transformation of an object (one of "left", "right", "center")
-     * See http://jsfiddle.net/1ow02gea/40/ on how originX/originY affect objects in groups
+     * See https://jsfiddle.net/1ow02gea/40/ on how originX/originY affect objects in groups
      * @type String
      * @default
      */
@@ -11325,7 +11325,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
 
     /**
      * Vertical origin of transformation of an object (one of "top", "bottom", "center")
-     * See http://jsfiddle.net/1ow02gea/40/ on how originX/originY affect objects in groups
+     * See https://jsfiddle.net/1ow02gea/40/ on how originX/originY affect objects in groups
      * @type String
      * @default
      */
@@ -12407,7 +12407,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @param {Object} [options.gradientTransform] transforMatrix for gradient
      * @return {fabric.Object} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/58y8b/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/58y8b/|jsFiddle demo}
      * @example <caption>Set linear gradient</caption>
      * object.setGradient('fill', {
      *   type: 'linear',
@@ -12480,9 +12480,9 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @param {Number} [options.offsetY=0] Pattern vertical offset from object's left/top corner
      * @return {fabric.Object} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/QT3pa/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/QT3pa/|jsFiddle demo}
      * @example <caption>Set pattern</caption>
-     * fabric.util.loadImage('http://fabricjs.com/assets/escheresque_ste.png', function(img) {
+     * fabric.util.loadImage('https://fabricjs.com/assets/escheresque_ste.png', function(img) {
      *   object.setPatternFill({
      *     source: img,
      *     repeat: 'repeat'
@@ -12503,7 +12503,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @param {Number} [options.offsetY=0] Shadow vertical offset
      * @return {fabric.Object} thisArg
      * @chainable
-     * @see {@link http://jsfiddle.net/fabricjs/7gvJG/|jsFiddle demo}
+     * @see {@link https://jsfiddle.net/fabricjs/7gvJG/|jsFiddle demo}
      * @example <caption>Set shadow with string notation</caption>
      * object.setShadow('2px 2px 10px rgba(0,0,0,0.2)');
      * canvas.renderAll();
@@ -14126,7 +14126,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * @param {String|Object} property Property to animate (if string) or properties to animate (if object)
    * @param {Number|Object} value Value to animate property to (if string was given first) or options object
    * @return {fabric.Object} thisArg
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-2#animation}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-2#animation}
    * @chainable
    *
    * As object — multiple properties
@@ -14500,7 +14500,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Line.fromElement})
    * @static
    * @memberOf fabric.Line
-   * @see http://www.w3.org/TR/SVG/shapes.html#LineElement
+   * @see https://www.w3.org/TR/SVG/shapes.html#LineElement
    */
   fabric.Line.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat('x1 y1 x2 y2'.split(' '));
 
@@ -14759,7 +14759,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Circle.fromElement})
    * @static
    * @memberOf fabric.Circle
-   * @see: http://www.w3.org/TR/SVG/shapes.html#CircleElement
+   * @see: https://www.w3.org/TR/SVG/shapes.html#CircleElement
    */
   fabric.Circle.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat('cx cy r'.split(' '));
 
@@ -15110,7 +15110,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Ellipse.fromElement})
    * @static
    * @memberOf fabric.Ellipse
-   * @see http://www.w3.org/TR/SVG/shapes.html#EllipseElement
+   * @see https://www.w3.org/TR/SVG/shapes.html#EllipseElement
    */
   fabric.Ellipse.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat('cx cy rx ry'.split(' '));
 
@@ -15255,7 +15255,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
           x = noTransform ? this.left : -this.width / 2,
           y = noTransform ? this.top : -this.height / 2,
           isRounded = rx !== 0 || ry !== 0,
-          k = 1 - 0.5522847498 /* "magic number" for bezier approximations of arcs (http://itc.ktu.lt/itc354/Riskus354.pdf) */;
+          k = 1 - 0.5522847498 /* "magic number" for bezier approximations of arcs (https://itc.ktu.lt/itc354/Riskus354.pdf) */;
 
       ctx.beginPath();
 
@@ -15353,7 +15353,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by `fabric.Rect.fromElement`)
    * @static
    * @memberOf fabric.Rect
-   * @see: http://www.w3.org/TR/SVG/shapes.html#RectElement
+   * @see: https://www.w3.org/TR/SVG/shapes.html#RectElement
    */
   fabric.Rect.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat('x y rx ry width height'.split(' '));
 
@@ -15541,7 +15541,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Polyline.fromElement})
    * @static
    * @memberOf fabric.Polyline
-   * @see: http://www.w3.org/TR/SVG/shapes.html#PolylineElement
+   * @see: https://www.w3.org/TR/SVG/shapes.html#PolylineElement
    */
   fabric.Polyline.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat();
 
@@ -15774,7 +15774,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by `fabric.Polygon.fromElement`)
    * @static
    * @memberOf fabric.Polygon
-   * @see: http://www.w3.org/TR/SVG/shapes.html#PolygonElement
+   * @see: https://www.w3.org/TR/SVG/shapes.html#PolygonElement
    */
   fabric.Polygon.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat();
 
@@ -15849,7 +15849,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * Path class
    * @class fabric.Path
    * @extends fabric.Object
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-1#path_and_pathgroup}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-1#path_and_pathgroup}
    * @see {@link fabric.Path#initialize} for constructor definition
    */
   fabric.Path = fabric.util.createClass(fabric.Object, /** @lends fabric.Path.prototype */ {
@@ -16753,7 +16753,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * List of attribute names to account for when parsing SVG element (used by `fabric.Path.fromElement`)
    * @static
    * @memberOf fabric.Path
-   * @see http://www.w3.org/TR/SVG/paths.html#PathElement
+   * @see https://www.w3.org/TR/SVG/paths.html#PathElement
    */
   fabric.Path.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat(['d']);
 
@@ -16801,7 +16801,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * Path group class
    * @class fabric.PathGroup
    * @extends fabric.Path
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-1#path_and_pathgroup}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-1#path_and_pathgroup}
    * @see {@link fabric.PathGroup#initialize} for constructor definition
    */
   fabric.PathGroup = fabric.util.createClass(fabric.Path, /** @lends fabric.PathGroup.prototype */ {
@@ -17091,7 +17091,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * @class fabric.Group
    * @extends fabric.Object
    * @mixes fabric.Collection
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-3#groups}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-3#groups}
    * @see {@link fabric.Group#initialize} for constructor definition
    */
   fabric.Group = fabric.util.createClass(fabric.Object, fabric.Collection, /** @lends fabric.Group.prototype */ {
@@ -17618,7 +17618,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
    * Image class
    * @class fabric.Image
    * @extends fabric.Object
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-1#images}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-1#images}
    * @see {@link fabric.Image#initialize} for constructor definition
    */
   fabric.Image = fabric.util.createClass(fabric.Object, /** @lends fabric.Image.prototype */ {
@@ -17640,7 +17640,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * AlignX value, part of preserveAspectRatio (one of "none", "mid", "min", "max")
-     * @see http://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
+     * @see https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
      * This parameter defines how the picture is aligned to its viewport when image element width differs from image width.
      * @type String
      * @default
@@ -17649,7 +17649,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
 
     /**
      * AlignY value, part of preserveAspectRatio (one of "none", "mid", "min", "max")
-     * @see http://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
+     * @see https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
      * This parameter defines how the picture is aligned to its viewport when image element height differs from image height.
      * @type String
      * @default
@@ -17659,7 +17659,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
     /**
      * meetOrSlice value, part of preserveAspectRatio  (one of "meet", "slice").
      * if meet the image is always fully visibile, if slice the viewport is always filled with image.
-     * @see http://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
+     * @see https://www.w3.org/TR/SVG/coords.html#PreserveAspectRatioAttribute
      * @type String
      * @default
      */
@@ -18199,7 +18199,7 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
   /**
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Image.fromElement})
    * @static
-   * @see {@link http://www.w3.org/TR/SVG/struct.html#ImageElement}
+   * @see {@link https://www.w3.org/TR/SVG/struct.html#ImageElement}
    */
   fabric.Image.ATTRIBUTE_NAMES =
     fabric.SHARED_ATTRIBUTES.concat('x y width height preserveAspectRatio xlink:href'.split(' '));
@@ -18338,8 +18338,8 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
 /**
  * @namespace fabric.Image.filters
  * @memberOf fabric.Image
- * @tutorial {@link http://fabricjs.com/fabric-intro-part-2#image_filters}
- * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+ * @tutorial {@link https://fabricjs.com/fabric-intro-part-2#image_filters}
+ * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
  */
 fabric.Image.filters = fabric.Image.filters || { };
 
@@ -18409,7 +18409,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.Brightness#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Brightness({
    *   brightness: 200
@@ -18488,12 +18488,12 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
       extend = fabric.util.object.extend;
 
   /**
-   * Adapted from <a href="http://www.html5rocks.com/en/tutorials/canvas/imagefilters/">html5rocks article</a>
+   * Adapted from <a href="https://www.html5rocks.com/en/tutorials/canvas/imagefilters/">html5rocks article</a>
    * @class fabric.Image.filters.Convolute
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.Convolute#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example <caption>Sharpen filter</caption>
    * var filter = new fabric.Image.filters.Convolute({
    *   matrix: [ 0, -1,  0,
@@ -18651,7 +18651,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.GradientTransparency#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.GradientTransparency({
    *   threshold: 200
@@ -18732,7 +18732,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Image.filters.Grayscale
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Grayscale();
    * object.filters.push(filter);
@@ -18795,7 +18795,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Image.filters.Invert
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Invert();
    * object.filters.push(filter);
@@ -18852,7 +18852,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
 
   /**
    * Mask filter class
-   * See http://resources.aleph-1.com/mask/
+   * See https://resources.aleph-1.com/mask/
    * @class fabric.Image.filters.Mask
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
@@ -18963,7 +18963,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.Noise#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Noise({
    *   noise: 700
@@ -19050,7 +19050,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.Pixelate#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Pixelate({
    *   blocksize: 8
@@ -19162,7 +19162,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.RemoveWhite#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.RemoveWhite({
    *   threshold: 40,
@@ -19262,7 +19262,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Image.filters.Sepia
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Sepia();
    * object.filters.push(filter);
@@ -19322,7 +19322,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Image.filters.Sepia2
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Sepia2();
    * object.filters.push(filter);
@@ -19388,7 +19388,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
    * @see {@link fabric.Image.filters.Tint#initialize} for constructor definition
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example <caption>Tint filter with hex color and opacity</caption>
    * var filter = new fabric.Image.filters.Tint({
    *   color: '#3513B0',
@@ -19497,7 +19497,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
 
   /**
    * Multiply filter class
-   * Adapted from <a href="http://www.laurenscorijn.com/articles/colormath-basics">http://www.laurenscorijn.com/articles/colormath-basics</a>
+   * Adapted from <a href="https://www.laurenscorijn.com/articles/colormath-basics">https://www.laurenscorijn.com/articles/colormath-basics</a>
    * @class fabric.Image.filters.Multiply
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
@@ -19741,7 +19741,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Image.filters.Resize
    * @memberOf fabric.Image.filters
    * @extends fabric.Image.filters.BaseFilter
-   * @see {@link http://fabricjs.com/image-filters|ImageFilters demo}
+   * @see {@link https://fabricjs.com/image-filters|ImageFilters demo}
    * @example
    * var filter = new fabric.Image.filters.Resize();
    * object.filters.push(filter);
@@ -20086,7 +20086,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * @class fabric.Text
    * @extends fabric.Object
    * @return {fabric.Text} thisArg
-   * @tutorial {@link http://fabricjs.com/fabric-intro-part-2#text}
+   * @tutorial {@link https://fabricjs.com/fabric-intro-part-2#text}
    * @see {@link fabric.Text#initialize} for constructor definition
    */
   fabric.Text = fabric.util.createClass(fabric.Object, /** @lends fabric.Text.prototype */ {
@@ -21151,7 +21151,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
    * List of attribute names to account for when parsing SVG element (used by {@link fabric.Text.fromElement})
    * @static
    * @memberOf fabric.Text
-   * @see: http://www.w3.org/TR/SVG/text.html#TextElement
+   * @see: https://www.w3.org/TR/SVG/text.html#TextElement
    */
   fabric.Text.ATTRIBUTE_NAMES = fabric.SHARED_ATTRIBUTES.concat(
     'x y dx dy font-family font-style font-weight font-size text-decoration text-anchor'.split(' '));
@@ -24882,8 +24882,8 @@ fabric.util.object.extend(fabric.IText.prototype, /** @lends fabric.IText.protot
 
   var DOMParser = require('xmldom').DOMParser,
       URL = require('url'),
-      HTTP = require('http'),
-      HTTPS = require('https'),
+      https = require('https'),
+      https = require('https'),
 
       Canvas = require('canvas'),
       Image = require('canvas').Image;
@@ -24892,13 +24892,13 @@ fabric.util.object.extend(fabric.IText.prototype, /** @lends fabric.IText.protot
   function request(url, encoding, callback) {
     var oURL = URL.parse(url);
 
-    // detect if http or https is used
+    // detect if https or https is used
     if ( !oURL.port ) {
       oURL.port = ( oURL.protocol.indexOf('https:') === 0 ) ? 443 : 80;
     }
 
     // assign request handler based on protocol
-    var reqHandler = (oURL.protocol.indexOf('https:') === 0 ) ? HTTPS : HTTP,
+    var reqHandler = (oURL.protocol.indexOf('https:') === 0 ) ? https : https,
         req = reqHandler.request({
           hostname: oURL.hostname,
           port: oURL.port,
@@ -24964,7 +24964,7 @@ fabric.util.object.extend(fabric.IText.prototype, /** @lends fabric.IText.protot
       img.src = img._src = url;
       callback && callback.call(context, img);
     }
-    else if (url && url.indexOf('http') !== 0) {
+    else if (url && url.indexOf('https') !== 0) {
       requestFs(url, createImageAndCallBack);
     }
     else if (url) {
@@ -24977,7 +24977,7 @@ fabric.util.object.extend(fabric.IText.prototype, /** @lends fabric.IText.protot
 
   fabric.loadSVGFromURL = function(url, callback, reviver) {
     url = url.replace(/^\n\s*/, '').replace(/\?.*$/, '').trim();
-    if (url.indexOf('http') !== 0) {
+    if (url.indexOf('https') !== 0) {
       requestFs(url, function(body) {
         fabric.loadSVGFromString(body.toString(), callback, reviver);
       });

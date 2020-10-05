@@ -11,17 +11,17 @@ It works with serial, pie, XY, funnel, and radar.
 
 Here are some examples:
 
-[Serial chart (line)](http://codepen.io/team/amcharts/pen/64673d1369cc47c0e6a970b071bafd03)
+[Serial chart (line)](https://codepen.io/team/amcharts/pen/64673d1369cc47c0e6a970b071bafd03)
 
-[Serial chart (column)](http://codepen.io/team/amcharts/pen/a5322d071a194d5975a4c68309724324)
+[Serial chart (column)](https://codepen.io/team/amcharts/pen/a5322d071a194d5975a4c68309724324)
 
-[Pie chart](http://codepen.io/team/amcharts/pen/3ff9b206ce37111fa508156df38504bc)
+[Pie chart](https://codepen.io/team/amcharts/pen/3ff9b206ce37111fa508156df38504bc)
 
-[XY chart](http://codepen.io/team/amcharts/pen/9c9289a7b5f8b1d6d11441836e09cc81)
+[XY chart](https://codepen.io/team/amcharts/pen/9c9289a7b5f8b1d6d11441836e09cc81)
 
-[Funnel chart](http://codepen.io/team/amcharts/pen/8fd8d025730b01939a2eb56b908488df)
+[Funnel chart](https://codepen.io/team/amcharts/pen/8fd8d025730b01939a2eb56b908488df)
 
-[Radar chart](http://codepen.io/team/amcharts/pen/6ffb5e356b6015a6dcb6019d7b14d3f6)
+[Radar chart](https://codepen.io/team/amcharts/pen/6ffb5e356b6015a6dcb6019d7b14d3f6)
 
 
 ## Installation
@@ -82,13 +82,13 @@ versions or completely different products out of them.
 
 Please see attached file "license.txt" for the complete license or online here:
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
 
 ## Contact us
 
 * Email: contact@amcharts.com
-* Web: http://www.amcharts.com/
+* Web: https://www.amcharts.com/
 * Facebook: https://www.facebook.com/amcharts
 * Twitter: https://twitter.com/amcharts
 
